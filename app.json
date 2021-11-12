@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "ecociclagem",
+    "slug": "ecociclagem",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "ecociclagem"
+}
