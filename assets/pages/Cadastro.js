@@ -2,11 +2,28 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import RegisterInfo from '../components/RegisterInfo';
-
+import Login from '../components/LoginButton';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useState } from 'react/cjs/react.development';
 
 
 export default function App() {
+
+  const data = {
+    name: stateName,
+    lastname: stateLastName,
+    birthday: stateBirth,
+    cep: stateCep,
+    bairro: stateNeigh,
+  }
+
+  const [stateName, setStateName] = useState('')
+  const [stateLastName, setStateLastName] = useState('')
+  const [stateBirth, setStateBirth] = useState('')
+  const [stateCep, setStateCep] = useState('')
+  const [stateNeigh, setStateNeigh] = useState('')
+
+
   return (
 
     <View style={styles.container}>
@@ -27,25 +44,29 @@ export default function App() {
 
       <View style={styles.topInfo}>
         <View style={styles.infoName}>
-          <RegisterInfo inputTitle='Nome*' onChange={(value) => console.log(value)} />
+          <RegisterInfo inputTitle='Nome*' onChange={(value) => setStateName(value)} />
 
-          <RegisterInfo inputTitle='Sobrenome*' onChange={(value) => console.log(value)} />
+          <RegisterInfo inputTitle='Sobrenome*' onChange={(value) => setStateLastName(value)} />
         </View>
 
         <View>
-          <RegisterInfo inputTitle='Data de nascimento*' onChange={(value) => console.log(value)} inputType='decimal-pad' />
+          <RegisterInfo inputTitle='Data de nascimento*' onChange={(value) => setStateBirth(value)} inputType='decimal-pad' />
         </View>
       </View>
 
       <View style={styles.bottomInfo}>
 
         <View style={{ width: '45%' }}>
-          <RegisterInfo inputTitle='CEP' onChange={(value) => console.log(value)} inputType='decimal-pad' />
+          <RegisterInfo inputTitle='CEP' onChange={(value) => setStateCep(value)} inputType='decimal-pad' />
         </View>
         <View>
-          <RegisterInfo inputTitle='Bairro' onChange={(value) => console.log(value)} />
+          <RegisterInfo inputTitle='Bairro' onChange={(value) => setStateNeigh(value)} />
         </View>
 
+      </View>
+
+      <View style={styles.regButton}>
+        <Login titulo='Cadastrar' onPress={() => console.log(stateName, stateLastName, stateBirth, stateCep, stateNeigh)} />
       </View>
 
     </View>
@@ -94,6 +115,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginVertical: 15,
     paddingHorizontal: 10,
+  },
+
+  regButton: {
+    width: '80%',
+    marginTop: 20,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 
 });

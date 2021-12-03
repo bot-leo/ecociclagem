@@ -7,7 +7,7 @@ export default function Componente(props) {
   return (
     <View style={styles.container}>
       <TextInput
-        placeholderTextColor='#FFF '
+        placeholderTextColor='#fff'
         placeholder='Informe seu CPF: '
         style={styles.input}
         onChangeText={(value) => props.onChange(value)}

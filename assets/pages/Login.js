@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from '../components/LoginButton';
 import InputCPF from '../components/InputCPF'
@@ -7,6 +7,9 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export default function App() {
+
+  const [CPFState, setCPFState] = useState('')
+
   return (
     <View style={styles.container}>
 
@@ -23,12 +26,12 @@ export default function App() {
       </View>
 
       <View style={styles.input}>
-        <InputCPF onChange={(value) => console.log(value)} />
+        <InputCPF onChange={(value) => setCPFState(value)} />
       </View>
 
       <View style={styles.register}>
 
-        <Login titulo='Acessar' onPress={() => console.log('Acessar')} />
+        <Login titulo='Acessar' onPress={() => console.log(CPFState)} />
 
         <Text style={{ paddingBottom: 10, color: '#aba283' }}>
           Ou
