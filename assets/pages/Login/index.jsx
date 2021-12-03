@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Login from '../components/LoginButton';
-import InputCPF from '../components/InputCPF'
+import Login from '../../components/LoginButton';
+import InputCPF from '../../components/InputCPF'
 import { TouchableOpacity } from 'react-native-gesture-handler';
-
+import { useNavigation } from '@react-navigation/native';
 
 export default function App() {
 
+  const navigation = useNavigation();
   const [CPFState, setCPFState] = useState('')
 
   return (
@@ -37,7 +38,7 @@ export default function App() {
           Ou
         </Text>
 
-        <Login titulo='Cadastrar' onPress={() => console.log('Cadastrar')} />
+        <Login titulo='Cadastrar' onPress={() => navigation.navigate('Cadastro')} />
 
       </View>
 

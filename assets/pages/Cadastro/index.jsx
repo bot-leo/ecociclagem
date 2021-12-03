@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import RegisterInfo from '../components/RegisterInfo';
-import Login from '../components/LoginButton';
+import RegisterInfo from '../../components/RegisterInfo';
+import Login from '../../components/LoginButton';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useState } from 'react/cjs/react.development';
 
