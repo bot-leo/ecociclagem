@@ -1,4 +1,6 @@
-import {StyleSheet} from 'react-native'
+import {StyleSheet, Dimensions} from 'react-native'
+
+export const {width, height} = Dimensions.get('window')
 
 export const globalStyle  = StyleSheet.create({
   containerScreen: {
