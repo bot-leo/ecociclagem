@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Login from '../../components/LoginButton';
 import InputMail from '../../components/InputMail'
-import Pass from '../../components/Pass'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import axios from 'axios';
+import Logo1 from '../../../assets/imgs/PrefeituraLogoSVG.svg'
+
 
 
 
@@ -51,9 +52,7 @@ export default function App() {
     <LinearGradient style={styles.container} colors={['#42D259', '#28496D']}>
 
       <View style={styles.topLogoPlace}>
-        <Image
-          source={require('../../../assets/imgs/PrefeituraLogo1.png')}
-        />
+      <Logo1 width ={140} height={70} />
       </View>
 
       <View style={styles.title}>
