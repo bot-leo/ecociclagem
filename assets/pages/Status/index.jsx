@@ -15,7 +15,7 @@ export default function Status(){
 
       <View style={style.containerButtons}>
         <ButtomGeneric buttonTitle="Projeto Ambiental" onPress={() => navigation.navigate('EnvironmentalProjectScreen')}/>
-        <ButtomGeneric buttonTitle="ReciclaArtes" onPress={() => navigation.navigate('MyRecycleBins')}/>
+        <ButtomGeneric buttonTitle="ReciclaArtes" onPress={() => navigation.navigate('Votacao')}/>
       </View>
     </ConstructionScreen>
   )

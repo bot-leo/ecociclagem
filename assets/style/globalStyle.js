@@ -10,7 +10,8 @@ export const globalStyle  = StyleSheet.create({
     justifyContent: 'center',
   },
   textTitle:{
-    fontSize:20,
-    fontWeight:"bold"
+    fontSize:48,
+    fontWeight:"bold",
+    color:"#FFF"
   }
-})
+}) 

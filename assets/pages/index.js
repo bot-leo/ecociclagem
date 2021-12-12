@@ -7,6 +7,7 @@ import EnvironmentalProjectScreen from "../pages/EnvironmentalProjectScreen"
 import MyRecycleBins from "../pages/MyRecycleBins"
 import RecyclingLibrary from "../pages/RecyclingLibrary"
 import TabBottomNavigation from "../navigation/TabBottomNavigation"
+import Votacao from "../pages/Votacao"
 
 
 
@@ -19,5 +20,6 @@ export{
   EnvironmentalProjectScreen,
   MyRecycleBins,
   RecyclingLibrary,
-  TabBottomNavigation
+  TabBottomNavigation,
+  Votacao
 }
