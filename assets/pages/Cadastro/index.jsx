@@ -1,10 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import RegisterInfo from '../../components/RegisterInfo';
 import Login from '../../components/LoginButton';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useState } from 'react/cjs/react.development';
+import axios from 'axios';
+import { LinearGradient } from 'expo-linear-gradient';
+import api from '../../utils/api';
 
 
 export default function App() {
@@ -14,62 +16,140 @@ export default function App() {
     lastname: stateLastName,
     birthday: stateBirth,
     cep: stateCep,
-    bairro: stateNeigh,
+    email: stateEmail,
+    pass: statePass,
   }
 
   const [stateName, setStateName] = useState('')
   const [stateLastName, setStateLastName] = useState('')
   const [stateBirth, setStateBirth] = useState('')
   const [stateCep, setStateCep] = useState('')
-  const [stateNeigh, setStateNeigh] = useState('')
+  const [stateEmail, setStateEmail] = useState('')
+  const [statePass, setStatePass] = useState('')
+  const [stateConfirmPass, setStateConfirmPass] = useState('')
+
+  const [passwordOdd, setPasswordOdd] = useState(false)
+
+  const confirmPassword = () => {
+    if (statePass == stateConfirmPass) {
+      setPasswordOdd(true)
+    }
+    else {
+      setPasswordOdd(false)
+    }
+  }
+
+  const getAdress = async () => {
+    axios({
+      method: 'get',
+      url: 'https://ecociclagem-api.herokuapp.com/cep',
+      data: { 'cep': '45020330' }
+    })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error.response)
+      })
+  }
+
+  const signIn = () => {
+
+    const configurationObject = {
+      url: `https://ecociclagem-api.herokuapp.com/cadastro`,
+      method: "post",
+      data: {
+        nome: stateName,
+        sobrenome: stateLastName,
+        cep: stateCep,
+        nascimento: stateBirth,
+        email: stateEmail,
+        senha: statePass
+      },
+    };
+
+    if (passwordOdd) {
+      axios(configurationObject)
+        .then((response) => { //Cadastro realizado
+          alert(JSON.stringify(response.data))
+          console.log(response.data)
+        })
+        .catch((error) => { //requisição deu errado
+          console.log(error);
+          alert("Houve um erro!");
+        });
+    }
+    else{
+      alert("As senhas são diferentes")
+    }
+
+
+  };
 
 
   return (
 
-    <View style={styles.container}>
+    <LinearGradient style={styles.container} colors={['#42D259', '#28496D']}>
 
-      <View>
-        <View style={styles.logoPlace}>
-        </View>
+      <View style={styles.topLogoPlace}>
+        <Image
+          source={require('../../../assets/imgs/PrefeituraLogo1.png')}
+        />
       </View>
 
       <View style={styles.title}>
-        <Text style={{ color: '#FFF', fontSize: 25, }}>
-          Bem-vindo ao Reciclaúdio
+        <Text style={{ color: '#FFF', fontSize: 35, }}>
+          Vamos Lá!
         </Text>
-        <Text style={{ color: '#FFF', fontSize: 13, textAlign: 'center' }}>
-          Verificamos que esse é o seu primeiro acesso. Complete seu cadastro abaixo:
+      </View>
+      <View style={styles.subTitle}>
+        <Text style={{ color: '#FFF', fontSize: 13, textAlign: 'justify', lineHeight: 30 }}>
+          Verificamos que esse é o seu primeiro acesso no aplicativo. Para continuar, insira seus dados para realizar seu cadastro:
         </Text>
       </View>
 
       <View style={styles.topInfo}>
         <View style={styles.infoName}>
-          <RegisterInfo inputTitle='Nome*' onChange={(value) => setStateName(value)} />
+          <RegisterInfo inputTitle='Nome:' onChange={(value) => setStateName(value)} />
 
-          <RegisterInfo inputTitle='Sobrenome*' onChange={(value) => setStateLastName(value)} />
-        </View>
+          <RegisterInfo inputTitle='Sobrenome:' onChange={(value) => setStateLastName(value)} />
 
-        <View>
-          <RegisterInfo inputTitle='Data de nascimento*' onChange={(value) => setStateBirth(value)} inputType='decimal-pad' />
-        </View>
-      </View>
+          <RegisterInfo inputTitle='Data de Nascimento:' onChange={(value) => setStateBirth(value)} />
 
-      <View style={styles.bottomInfo}>
+          <RegisterInfo inputTitle='E-mail:' onChange={(value) => setStateEmail(value)} />
 
-        <View style={{ width: '45%' }}>
-          <RegisterInfo inputTitle='CEP' onChange={(value) => setStateCep(value)} inputType='decimal-pad' />
-        </View>
-        <View>
-          <RegisterInfo inputTitle='Bairro' onChange={(value) => setStateNeigh(value)} />
+          <RegisterInfo
+            inputTitle='Senha'
+            onChange={(value) => setStatePass(value)}
+            passwordKeyboard={true}
+          />
+
+          <RegisterInfo
+            inputTitle='Confirmação de Senha'
+            onChange={(value) => setStateConfirmPass(value)}
+            passwordKeyboard={true}
+            onEnd={() => confirmPassword()}
+          />
+
+          <RegisterInfo inputTitle='CEP:' onChange={(value) => setStateCep(value)} inputType='decimal-pad' onEnd={() => getAdress()} />
         </View>
 
       </View>
 
       <View style={styles.regButton}>
-        <Login titulo='Cadastrar' onPress={() => console.log(stateName, stateLastName, stateBirth, stateCep, stateNeigh)} />
+        <Login titulo='Cadastrar' onPress={() => signIn()} />
       </View>
 
-    </View>
+      <View style={styles.bottomLogoPlace}>
+        <Image
+          source={require('../../../assets/imgs/PMALogo2.png')}
+        />
+        <Image
+          source={require('../../../assets/imgs/FehidroLogo3.png')}
+        />
+      </View>
+
+    </LinearGradient>
   );
 }
 
@@ -82,46 +162,53 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  logoPlace: {
-    width: 70,
-    height: 70,
-    backgroundColor: '#FFF',
-    marginHorizontal: 20,
+  topLogoPlace: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
   },
 
   title: {
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 40,
+  },
+  subTitle: {
+    width: '98%',
+    alignItems: 'center',
+    justifyContent: 'center',
+
   },
 
   topInfo: {
     width: '100%',
-    height: 150,
+    height: 200,
     justifyContent: 'space-between',
-    marginVertical: 15,
-    paddingHorizontal: 10,
+    paddingHorizontal: 30,
+
   },
 
   infoName: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-
-  bottomInfo: {
     width: '100%',
-    height: 150,
+    flexDirection: 'column',
     justifyContent: 'space-between',
-    marginVertical: 15,
-    paddingHorizontal: 10,
+    height: 300,
   },
 
   regButton: {
-    width: '80%',
-    marginTop: 20,
+    width: '90%',
+    marginTop: 150,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
+  bottomLogoPlace: {
+    flexDirection: 'row',
+    width: '90%',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
 });
