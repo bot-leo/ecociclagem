@@ -35,9 +35,13 @@ export default function App() {
     };
 
     axios(configurationObject)
-      .then((response) => { //Cadastro realizado
+      .then((response) => { //Login realizado
         alert(JSON.stringify(response.data))
-        console.log(response.data)
+        // console.log(response.data)
+        
+        // response.data?.id ? navigation.navigate('Votacao') : null
+
+        navigation.navigate('Votacao')
       })
       .catch((error) => { //requisição deu errado
         console.log(error);
