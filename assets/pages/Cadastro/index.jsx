@@ -1,15 +1,26 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import RegisterInfo from '../../components/RegisterInfo';
-import Login from '../../components/LoginButton';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { useState } from 'react/cjs/react.development';
-import axios from 'axios';
-import { LinearGradient } from 'expo-linear-gradient';
-import api from '../../utils/api';
+import React from 'react'
+import { StyleSheet, 
+         Text, 
+         View, 
+         Image,
+         ToastAndroid } from 'react-native'
+import {useNavigation} from "@react-navigation/native"
+import axios from 'axios'
+import { LinearGradient } from 'expo-linear-gradient'
+
+import RegisterInfo from '../../components/RegisterInfo'
+import Login from '../../components/LoginButton'
+
+import { useState } from 'react/cjs/react.development'
+
 
 
 export default function App() {
+  const navigation = useNavigation()
+
+  const showToast = (text) => {
+    ToastAndroid.show(text, ToastAndroid.SHORT)
+  }
 
   const data = {
     name: stateName,
@@ -71,8 +82,10 @@ export default function App() {
     if (passwordOdd) {
       axios(configurationObject)
         .then((response) => { //Cadastro realizado
-          alert(JSON.stringify(response.data))
+          // alert(JSON.stringify(response.data))
           console.log(response.data)
+          showToast('Sucesso!')
+          navigation.navigate("Login")
         })
         .catch((error) => { //requisição deu errado
           console.log(error);
@@ -211,4 +224,4 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 10,
   },
-});
+})

@@ -1,19 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import Login from '../../components/LoginButton';
+import React, { useState, useEffect } from 'react'
+import { StatusBar } from 'expo-status-bar'
+import { StyleSheet, 
+         Text, 
+         View, 
+         Image,
+         Alert } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { LinearGradient } from 'expo-linear-gradient'
+import axios from 'axios'
+
+import Login from '../../components/LoginButton'
 import InputMail from '../../components/InputMail'
-import Pass from '../../components/Pass'
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/native';
-import { LinearGradient } from 'expo-linear-gradient';
-import axios from 'axios';
 
 
 
 export default function App() {
 
-  const navigation = useNavigation();
+  const navigation = useNavigation()
+
+  const showAlertLogin = (nome) =>
+    Alert.alert(`Bem Vindo ${nome} !!`, `Precisamos da sua ajuda para escolher o nome do mascote.\nAbaixo temos algumas opções para você escolher.\nVamos La ?!!`, [
+      { text: 'Entendi', onPress: () => console.log('OK Pressed') }
+    ])
+  const showAlertLoginVotou = (nome, voto) =>
+    Alert.alert(`Ola ${nome} !!`, `Você votou no ${voto}, agradecemos sua participação e em breve teremos atualizações então fique ligado...`, [
+      { text: 'Entendi', onPress: () => console.log('OK Pressed') }
+    ])
 
   const data = {
     pass: statePass,
@@ -22,6 +34,7 @@ export default function App() {
 
   const [statePass, setStatePass] = useState('')
   const [stateEmail, setStateEmail] = useState('')
+
 
   const login = () => {
 
@@ -35,12 +48,22 @@ export default function App() {
     };
 
     axios(configurationObject)
-      .then((response) => { //Login realizado
-        alert(JSON.stringify(response.data))
+      .then((response) => { 
+        
+        //Login realizado
+        // alert(JSON.stringify(response.data.data))
+        
         console.log(response.data)
+       
         
         if(response.data?.status === "Login sucessfull"){
-          navigation.navigate('Votacao')
+          if(response.data.data.voto === ""){
+            navigation.navigate('Votacao', response.data.data.id)
+            showAlertLogin(response.data.data.name)
+          }else{
+            navigation.navigate('ThanksScreen')
+            showAlertLoginVotou(response.data.data.name, response.data.data.voto)
+          }
         }else{
           alert("Erro Desconhecido")
         }
@@ -111,7 +134,6 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-
   container: {
     flex: 1,
     backgroundColor: '#3f7424',
