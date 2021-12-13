@@ -3,11 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Login from '../../components/LoginButton';
 import InputMail from '../../components/InputMail'
-import Pass from '../../components/Pass'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import axios from 'axios';
+import Logo1 from '../../imgs/PrefeituraLogoSVG.svg'
+import Logo2 from '../../imgs/PMALogoSVG.svg'
+import Logo3 from '../../imgs/FehindroLogoSVG.svg'
+
 
 
 
@@ -51,9 +54,7 @@ export default function App() {
     <LinearGradient style={styles.container} colors={['#42D259', '#28496D']}>
 
       <View style={styles.topLogoPlace}>
-        <Image
-          source={require('../../../assets/imgs/PrefeituraLogo1.png')}
-        />
+        <Logo1 />
       </View>
 
       <View style={styles.title}>
@@ -92,12 +93,8 @@ export default function App() {
       </View>
 
       <View style={styles.bottomLogoPlace}>
-        <Image
-          source={require('../../../assets/imgs/PMALogo2.png')}
-        />
-        <Image
-          source={require('../../../assets/imgs/FehidroLogo3.png')}
-        />
+        <Logo2 />
+        <Logo3 />
       </View>
 
     </LinearGradient>
@@ -134,8 +131,8 @@ const styles = StyleSheet.create({
 
   register: {
     width: '80%',
-    marginBottom: 10,
-    marginTop: 10,
+    marginBottom: 20,
+    marginTop: 20,
     justifyContent: 'space-around',
     alignItems: 'center'
   },
