@@ -8,6 +8,7 @@ import MyRecycleBins from "../pages/MyRecycleBins"
 import RecyclingLibrary from "../pages/RecyclingLibrary"
 import TabBottomNavigation from "../navigation/TabBottomNavigation"
 import Votacao from "../pages/Votacao"
+import ThanksScreen from "../pages/ThanksScreen"
 
 
 
@@ -21,5 +22,6 @@ export{
   MyRecycleBins,
   RecyclingLibrary,
   TabBottomNavigation,
-  Votacao
+  Votacao,
+  ThanksScreen
 }

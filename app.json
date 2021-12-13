@@ -6,6 +6,11 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "splash": {
+      "image": "./details/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#42D259"
+    },
     "packagerOpts": {
       "config": "metro.config.js",
       "sourceExts": [

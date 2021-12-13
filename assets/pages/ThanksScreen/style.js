@@ -14,6 +14,7 @@ export const style = StyleSheet.create({
   background:{
     flex: 1,
     width: width,
+    height: height,
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop:20
@@ -25,13 +26,8 @@ export const style = StyleSheet.create({
     fontSize: 15,
     lineHeight: 35, 
     color:'#FFF', 
-    marginTop:15
-  },
-  containerButtonsName:{
-    width:width, 
-    height:250, 
-    justifyContent:'space-around', 
-    alignItems:"center"
+    marginTop:15,
+    paddingHorizontal:15,
   },
   containerLogos:{
     width:'90%',

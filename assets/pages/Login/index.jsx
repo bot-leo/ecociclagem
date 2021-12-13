@@ -37,11 +37,13 @@ export default function App() {
     axios(configurationObject)
       .then((response) => { //Login realizado
         alert(JSON.stringify(response.data))
-        // console.log(response.data)
+        console.log(response.data)
         
-        // response.data?.id ? navigation.navigate('Votacao') : null
-
-        navigation.navigate('Votacao')
+        if(response.data?.status === "Login sucessfull"){
+          navigation.navigate('Votacao')
+        }else{
+          alert("Erro Desconhecido")
+        }
       })
       .catch((error) => { //requisição deu errado
         console.log(error);
