@@ -1,8 +1,7 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { StyleSheet, 
          Text, 
          View, 
-         Image,
          ToastAndroid } from 'react-native'
 import {useNavigation} from "@react-navigation/native"
 import axios from 'axios'
@@ -11,12 +10,10 @@ import { LinearGradient } from 'expo-linear-gradient'
 import RegisterInfo from '../../components/RegisterInfo'
 import Login from '../../components/LoginButton'
 
-import { useState } from 'react/cjs/react.development'
 
-
-import Logo1 from '../../imgs/PrefeituraLogoSVG.svg'
-import Logo2 from '../../imgs/PMALogoSVG.svg'
-import Logo3 from '../../imgs/FehindroLogoSVG.svg'
+import Logo1 from '../../img/logo-prefeitura-itapecirica.svg'
+import Logo2 from '../../img/logo-meio-ambiente-arvore.svg'
+import Logo3 from '../../img/logo-fehidro-background.svg'
 
 
 export default function App() {

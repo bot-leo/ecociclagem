@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, 
          Text, 
          View, 
-         Image,
          Alert } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -12,6 +11,9 @@ import axios from 'axios'
 import Login from '../../components/LoginButton'
 import InputMail from '../../components/InputMail'
 
+import Logo1 from '../../img/logo-prefeitura-itapecirica.svg'
+import Logo2 from '../../img/logo-meio-ambiente-arvore.svg'
+import Logo3 from '../../img/logo-fehidro-background.svg'
 
 
 export default function App() {
@@ -23,7 +25,7 @@ export default function App() {
       { text: 'Entendi', onPress: () => console.log('OK Pressed') }
     ])
   const showAlertLoginVotou = (nome, voto) =>
-    Alert.alert(`Ola ${nome} !!`, `Você votou no ${voto}, agradecemos sua participação e em breve teremos atualizações então fique ligado...`, [
+    Alert.alert(`Ola ${nome} !!`, `Você votou no ${voto}, agradecemos sua participação, em breve teremos atualizações então fique ligado...`, [
       { text: 'Entendi', onPress: () => console.log('OK Pressed') }
     ])
 
@@ -51,11 +53,6 @@ export default function App() {
       .then((response) => { 
         
         //Login realizado
-        // alert(JSON.stringify(response.data.data))
-        
-        console.log(response.data)
-       
-        
         if(response.data?.status === "Login sucessfull"){
           if(response.data.data.voto === ""){
             navigation.navigate('Votacao', response.data.data.id)
@@ -69,11 +66,11 @@ export default function App() {
         }
       })
       .catch((error) => { //requisição deu errado
-        console.log(error);
-        alert("Houve um erro!");
-      });
+        console.log(error)
+        alert("Houve um erro!")
+      })
 
-  };
+  }
 
 
   return (
