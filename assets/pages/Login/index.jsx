@@ -80,9 +80,7 @@ export default function App() {
     <LinearGradient style={styles.container} colors={['#42D259', '#28496D']}>
 
       <View style={styles.topLogoPlace}>
-        <Image
-          source={require('../../../assets/imgs/PrefeituraLogo1.png')}
-        />
+        <Logo1 />
       </View>
 
       <View style={styles.title}>
@@ -121,12 +119,8 @@ export default function App() {
       </View>
 
       <View style={styles.bottomLogoPlace}>
-        <Image
-          source={require('../../../assets/imgs/PMALogo2.png')}
-        />
-        <Image
-          source={require('../../../assets/imgs/FehidroLogo3.png')}
-        />
+        <Logo2 />
+        <Logo3 />
       </View>
 
     </LinearGradient>
@@ -162,8 +156,8 @@ const styles = StyleSheet.create({
 
   register: {
     width: '80%',
-    marginBottom: 10,
-    marginTop: 10,
+    marginBottom: 20,
+    marginTop: 20,
     justifyContent: 'space-around',
     alignItems: 'center'
   },
