@@ -1,5 +1,5 @@
 import React from 'react'
-import {Text, View, ScrollView, SafeAreaView} from "react-native"
+import {Text, View, ScrollView, SafeAreaView, Image} from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { StatusBar } from 'expo-status-bar'
 import {useNavigation} from "@react-navigation/native"
@@ -12,6 +12,10 @@ import MascoteAgradecimento from '../../img/mascote-agradecimento.svg'
 import LogoAmbiental from '../../img/logo-meio-ambiente-arvore.svg'
 import LogoFehidro from '../../img/logo-fehidro-background.svg'
 import LogoItapecirica from '../../img/logo-prefeitura-itapecirica.svg'
+
+import LogoSemear from '../../img/logo-semear.png'
+import { width } from '../../style/globalStyle.js'
+
 
 
 
@@ -42,11 +46,15 @@ export default function ThanksScreen(){
       
           <MascoteAgradecimento/>
           
+          <View style={{marginTop:25}}>
+            <Text style={{fontSize: 12, lineHeight: 35, color:'#FFF',textAlign:"center" }}>Desenvolvido por :</Text>
+            <Image source={LogoSemear} style={{ width: 350, height:200}}/>
+          </View>
 
-            <View style={style.containerLogos}>
-              <LogoAmbiental/>
-              <LogoFehidro/>
-            </View>
+          <View style={style.containerLogos}>
+            <LogoAmbiental/>
+            <LogoFehidro/>
+          </View>
             
         </LinearGradient>
       </ScrollView>

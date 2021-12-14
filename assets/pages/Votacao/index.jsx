@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react'
 import {Text, 
         View, 
         ScrollView, 
+        Image,
         SafeAreaView, 
         ToastAndroid} from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
@@ -105,6 +106,8 @@ export default function Votacao({route}){
             <View style={{width:'90%', marginTop:39}}>
               <Login titulo="CONFIRMAR VOTO" onPress={() => realizarVotacao()}/>
             </View>
+
+           
             
 
             <View style={style.containerLogos}>

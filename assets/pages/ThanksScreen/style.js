@@ -14,7 +14,7 @@ export const style = StyleSheet.create({
   background:{
     flex: 1,
     width: width,
-    height: height,
+    // height: height,
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop:20
