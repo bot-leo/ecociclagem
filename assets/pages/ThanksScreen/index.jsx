@@ -11,8 +11,7 @@ import MascoteAgradecimento from '../../img/mascote-agradecimento.svg'
 import LogoAmbiental from '../../img/logo-meio-ambiente-arvore.svg'
 import LogoFehidro from '../../img/logo-fehidro-background.svg'
 import LogoItapecirica from '../../img/logo-prefeitura-itapecirica.svg'
-
-import LogoSemear from '../../img/logo-semear.svg'
+1
 
 
 export default function ThanksScreen(){
@@ -48,9 +47,8 @@ export default function ThanksScreen(){
             <LogoFehidro width={104} height={71}/>
           </View>
 
-          <View style={{marginTop:2, marginBottom:10}}>
-            <Text style={{fontSize: 12, lineHeight: 35, color:'#FFF',textAlign:"center" }}>Desenvolvido por :</Text>
-            <LogoSemear width={160} height={100}/>
+          <View style={{marginTop:2, marginBottom:3, width:"100%"}}>
+            <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'nats-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
           </View>
             
         </LinearGradient>
