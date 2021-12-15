@@ -170,6 +170,10 @@ export default function App() {
         <Logo2 width={159} height={74} />
         <Logo3 width={104} height={71}/>
       </View>
+
+      <View style={{marginTop:2, marginBottom:3, width:"100%"}}>
+        <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'nats-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
+      </View>
     </LinearGradient>
     </ScrollView>
     </SafeAreaView>
