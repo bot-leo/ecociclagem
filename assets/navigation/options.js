@@ -1,5 +1,3 @@
-
-
 const universalScreenOptions = { 
   headerShown: false, 
   title:"Ecociclagem" 
