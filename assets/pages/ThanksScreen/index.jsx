@@ -1,8 +1,7 @@
 import React from 'react'
-import {Text, View, ScrollView, SafeAreaView, Image} from "react-native"
+import {Text, View, ScrollView, SafeAreaView} from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { StatusBar } from 'expo-status-bar'
-import {useNavigation} from "@react-navigation/native"
 
 import {style} from './style.js'
 
@@ -16,11 +15,7 @@ import LogoItapecirica from '../../img/logo-prefeitura-itapecirica.svg'
 import LogoSemear from '../../img/logo-semear.svg'
 
 
-
-
-
 export default function ThanksScreen(){
-  const navigation = useNavigation()
   return (
     <SafeAreaView style={style.containerSafeView}>
       <StatusBar style="light" backgroundColor='#000' translucent={false} />
