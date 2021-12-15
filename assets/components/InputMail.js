@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
     borderRadius:10,
     marginBottom: 20
   },
-
   input: {
     paddingHorizontal: 15,
     width: '100%',

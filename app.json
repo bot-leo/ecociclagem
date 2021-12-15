@@ -1,11 +1,25 @@
 {
   "expo": {
     "name": "ecociclagem",
+    "icon": "./details/icon.png",
     "slug": "ecociclagem",
     "version": "1.0.0",
+    "ios": {
+      "bundleIdentifier": "com.yourcompany.yourappname",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.yourcompany.yourappname",
+      "versionCode": 1
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
+    "splash": {
+      "image": "./details/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#42D259"
+    },
     "packagerOpts": {
       "config": "metro.config.js",
       "sourceExts": [

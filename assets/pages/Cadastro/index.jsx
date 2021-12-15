@@ -1,19 +1,34 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import RegisterInfo from '../../components/RegisterInfo';
-import Login from '../../components/LoginButton';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { useState } from 'react/cjs/react.development';
-import axios from 'axios';
-import { LinearGradient } from 'expo-linear-gradient';
-import api from '../../utils/api';
+import React,{useState} from 'react'
+import {  Text, 
+         View, 
+         SafeAreaView,
+         ToastAndroid, 
+         ScrollView,
+        TouchableOpacity} from 'react-native'
+import {useNavigation} from "@react-navigation/native"
+import { StatusBar } from 'expo-status-bar'
+import axios from 'axios'
+import { LinearGradient } from 'expo-linear-gradient'
 
-import Logo1 from '../../imgs/PrefeituraLogoSVG.svg'
-import Logo2 from '../../imgs/PMALogoSVG.svg'
-import Logo3 from '../../imgs/FehindroLogoSVG.svg'
+import { FontAwesome } from '@expo/vector-icons'
+
+import {style} from "./style"
+
+import RegisterInfo from '../../components/RegisterInfo'
+import Login from '../../components/LoginButton'
+
+
+import Logo1 from '../../img/logo-prefeitura-itapecirica.svg'
+import Logo2 from '../../img/logo-meio-ambiente-arvore.svg'
+import Logo3 from '../../img/logo-fehidro-background.svg'
 
 
 export default function App() {
+  const navigation = useNavigation()
+
+  const showToast = (text) => {
+    ToastAndroid.show(text, ToastAndroid.SHORT)
+  }
 
   const data = {
     name: stateName,
@@ -75,8 +90,10 @@ export default function App() {
     if (passwordOdd) {
       axios(configurationObject)
         .then((response) => { //Cadastro realizado
-          alert(JSON.stringify(response.data))
+          // alert(JSON.stringify(response.data))
           console.log(response.data)
+          showToast('Sucesso!')
+          navigation.navigate("Login")
         })
         .catch((error) => { //requisição deu errado
           console.log(error);
@@ -87,31 +104,39 @@ export default function App() {
       alert("As senhas são diferentes")
     }
 
-
-  };
+  }
 
 
   return (
-
-    <LinearGradient style={styles.container} colors={['#42D259', '#28496D']}>
-
-      <View style={styles.topLogoPlace}>
-        <Logo1 />
+  <SafeAreaView style={style.containerSafe}>
+    <StatusBar style="light" backgroundColor='#000' translucent={false} />
+    <ScrollView style={style.contrainerScrollView} showsVerticalScrollIndicator={false} >
+    <LinearGradient style={style.container} colors={['#42D259', '#759DC8']}>
+       
+          <TouchableOpacity style={style.buttonBack}
+                            activeOpacity={.5}
+                            onPress={() => navigation.goBack()}>
+           <FontAwesome name="arrow-circle-left" size={35} color={"#fff"}/>
+          </TouchableOpacity>
+        
+      <View style={style.topLogoPlace}>
+        <Logo1 width={175} height={72}/>
       </View>
 
-      <View style={styles.title}>
-        <Text style={{ color: '#FFF', fontSize: 35, }}>
+      <View style={style.title}>
+        <Text style={{ color: '#FFF', fontSize: 48,fontFamily:'nats-regular'  }}>
           Vamos Lá!
         </Text>
       </View>
-      <View style={styles.subTitle}>
-        <Text style={{ color: '#FFF', fontSize: 13, textAlign: 'justify', lineHeight: 30 }}>
-          Verificamos que esse é o seu primeiro acesso no aplicativo. Para continuar, insira seus dados para realizar seu cadastro:
+
+      <View style={style.subTitle}>
+        <Text style={style.subTitleText}>
+          Verificamos que esse é o seu primeiro acesso no {'\n'}aplicativo. Para continuar, insira seus dados para{'\n'}realizar seu cadastro:
         </Text>
       </View>
 
-      <View style={styles.topInfo}>
-        <View style={styles.infoName}>
+      <View style={style.topInfo}>
+        <View style={style.infoName}>
           <RegisterInfo inputTitle='Nome:' onChange={(value) => setStateName(value)} />
 
           <RegisterInfo inputTitle='Sobrenome:' onChange={(value) => setStateLastName(value)} />
@@ -121,13 +146,13 @@ export default function App() {
           <RegisterInfo inputTitle='E-mail:' onChange={(value) => setStateEmail(value)} />
 
           <RegisterInfo
-            inputTitle='Senha'
+            inputTitle='Senha:'
             onChange={(value) => setStatePass(value)}
             passwordKeyboard={true}
           />
 
           <RegisterInfo
-            inputTitle='Confirmação de Senha'
+            inputTitle='Confirmação de Senha:'
             onChange={(value) => setStateConfirmPass(value)}
             passwordKeyboard={true}
             onEnd={() => confirmPassword()}
@@ -135,79 +160,19 @@ export default function App() {
 
           <RegisterInfo inputTitle='CEP:' onChange={(value) => setStateCep(value)} inputType='decimal-pad' onEnd={() => getAdress()} />
         </View>
-
       </View>
 
-      <View style={styles.regButton}>
+      <View style={style.regButton}>
         <Login titulo='Cadastrar' onPress={() => signIn()} />
       </View>
 
-      <View style={styles.bottomLogoPlace}>
-        <Logo2 />
-        <Logo3 />
+      <View style={style.bottomLogoPlace}>
+        <Logo2 width={159} height={74} />
+        <Logo3 width={104} height={71}/>
       </View>
-
     </LinearGradient>
-  );
+    </ScrollView>
+    </SafeAreaView>
+  )
 }
 
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    backgroundColor: '#3f7424',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  topLogoPlace: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-
-  title: {
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 40,
-  },
-  subTitle: {
-    width: '98%',
-    alignItems: 'center',
-    justifyContent: 'center',
-
-  },
-
-  topInfo: {
-    width: '100%',
-    height: 200,
-    justifyContent: 'space-between',
-    paddingHorizontal: 30,
-
-  },
-
-  infoName: {
-    width: '100%',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    height: 300,
-  },
-
-  regButton: {
-    width: '90%',
-    marginTop: 150,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  bottomLogoPlace: {
-    flexDirection: 'row',
-    width: '90%',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginTop: 10,
-    marginBottom:15,
-  },
-});

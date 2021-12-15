@@ -6,7 +6,9 @@ import {Login,
         RecyclingLibrary,
         SearchMap,
         Status,
-        TabBottomNavigation
+        TabBottomNavigation,
+        Votacao,
+        ThanksScreen
       } from "../pages"
 
 
@@ -46,6 +48,14 @@ const  stackScreens = [
   {
     name:"Status",
     component:Status
+  },
+  {
+    name:"Votacao",
+    component:Votacao
+  },
+  {
+    name:"ThanksScreen",
+    component:ThanksScreen
   }]
 
   export {stackScreens}

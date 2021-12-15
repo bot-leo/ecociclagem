@@ -1,7 +1,6 @@
 import React from "react"
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
 import {tabBottomScreens} from "./TabBottomScreens"
-//import Icon from '@expo/vector-icons/Feather'
 import Icon from '@expo/vector-icons/FontAwesome5'
 
 

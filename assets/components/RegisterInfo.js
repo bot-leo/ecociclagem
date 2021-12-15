@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    color: '#FFF'
+    color: '#FFF',
+    fontSize: 14, 
   }
 });

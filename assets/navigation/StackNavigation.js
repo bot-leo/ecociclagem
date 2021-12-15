@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { screenOptions, universalScreenOptions } from './options'
@@ -24,7 +23,7 @@ function StackNavigation() {
           />
         ))}
       </Navigator>
-      <StatusBar backgroundColor="transparent" />
+      
     </>
   )
 }
