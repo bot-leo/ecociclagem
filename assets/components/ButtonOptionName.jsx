@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {Text, StyleSheet, TouchableOpacity} from "react-native"
 
 
@@ -20,7 +20,8 @@ export default function ButtonOptionName({
     },
     titleButton:{
       color: '#fff',
-      fontSize:15
+      fontSize:15,
+      fontFamily:"nats-regular"
     },
     
   })

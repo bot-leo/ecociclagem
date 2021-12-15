@@ -22,10 +22,11 @@ export const style = StyleSheet.create({
     marginTop:15
   },
   textInfo:{
-    fontSize: 15,
+    fontSize: 16,
     lineHeight: 35, 
     color:'#FFF', 
-    marginTop:15
+    marginTop:15,
+    fontFamily:"nats-regular"
   },
   containerButtonsName:{
     width:width, 

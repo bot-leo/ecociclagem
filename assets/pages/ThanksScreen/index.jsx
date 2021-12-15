@@ -13,8 +13,8 @@ import LogoAmbiental from '../../img/logo-meio-ambiente-arvore.svg'
 import LogoFehidro from '../../img/logo-fehidro-background.svg'
 import LogoItapecirica from '../../img/logo-prefeitura-itapecirica.svg'
 
-import LogoSemear from '../../img/logo-semear.png'
-import { width } from '../../style/globalStyle.js'
+import LogoSemear from '../../img/logo-semear.svg'
+
 
 
 
@@ -29,7 +29,7 @@ export default function ThanksScreen(){
         style={style.background}
           >
             
-            <LogoItapecirica />
+            <LogoItapecirica width={175} height={72}/>
 
             <View style={style.containerTextTitle}>
               <TextTitle title="Muito Obrigado!"/> 
@@ -46,14 +46,16 @@ export default function ThanksScreen(){
       
           <MascoteAgradecimento/>
           
-          <View style={{marginTop:25}}>
-            <Text style={{fontSize: 12, lineHeight: 35, color:'#FFF',textAlign:"center" }}>Desenvolvido por :</Text>
-            <Image source={LogoSemear} style={{ width: 350, height:200}}/>
-          </View>
+          
 
           <View style={style.containerLogos}>
-            <LogoAmbiental/>
-            <LogoFehidro/>
+            <LogoAmbiental width={159} height={74} />
+            <LogoFehidro width={104} height={71}/>
+          </View>
+
+          <View style={{marginTop:2, marginBottom:10}}>
+            <Text style={{fontSize: 12, lineHeight: 35, color:'#FFF',textAlign:"center" }}>Desenvolvido por :</Text>
+            <LogoSemear width={160} height={100}/>
           </View>
             
         </LinearGradient>

@@ -14,20 +14,21 @@ export const style = StyleSheet.create({
   background:{
     flex: 1,
     width: width,
-    // height: height,
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop:20
   },
   containerTextTitle:{
-    marginTop:15
+    marginTop:15,
+    fontFamily:'nats-regular',
   },
   textInfo:{
-    fontSize: 15,
+    fontSize: 16,
     lineHeight: 35, 
     color:'#FFF', 
     marginTop:15,
     paddingHorizontal:15,
+    fontFamily:'nats-regular',
   },
   containerLogos:{
     width:'90%',

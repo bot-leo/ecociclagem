@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, 
-         Text, 
+import {  Text, 
          View, 
-         Alert } from 'react-native'
+         Alert,
+         SafeAreaView,
+         ScrollView} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { LinearGradient } from 'expo-linear-gradient'
 import axios from 'axios'
 
+import {style} from "./style"
+
 import Login from '../../components/LoginButton'
 import InputMail from '../../components/InputMail'
 
-import Logo1 from '../../img/logo-prefeitura-itapecirica.svg'
-import Logo2 from '../../img/logo-meio-ambiente-arvore.svg'
-import Logo3 from '../../img/logo-fehidro-background.svg'
-
+import LogoAmbiental from '../../img/logo-meio-ambiente-arvore.svg'
+import LogoFehidro from '../../img/logo-fehidro-background.svg'
+import LogoItapecirica from '../../img/logo-prefeitura-itapecirica.svg'
 
 export default function App() {
 
@@ -74,102 +76,54 @@ export default function App() {
 
 
   return (
-    <LinearGradient style={styles.container} colors={['#42D259', '#28496D']}>
+    <SafeAreaView style={style.containerSafe}>
+     <StatusBar style="light" backgroundColor='#000' translucent={false} />
+     <ScrollView style={style.contrainerScrollView} showsVerticalScrollIndicator={false} >
+        <LinearGradient style={style.container} colors={['#42D259', '#759DC8']}>
 
-      <View style={styles.topLogoPlace}>
-        <Logo1 />
-      </View>
+          <View style={style.topLogoPlace}>
+            <LogoItapecirica width={175} height={72}/>
+          </View>
 
-      <View style={styles.title}>
-        <Text style={{ fontSize: 40, color: '#fff' }}>
-          Olá! Tudo bem?
-        </Text>
-        <Text style={{ fontSize: 14, color: '#fff', textAlign: 'center', lineHeight: 35 }}>
-          Por favor, insira abaixo as suas informações de cadastro no Coleta Seletiva de Itapecerica.
-        </Text>
-      </View>
+          <View style={style.containerTitle}>
+            <Text style={style.titlePrincipal}>Olá! Tudo bem?</Text>
+            <Text style={style.subTitle}>
+              Por favor, insira abaixo as suas informações de{'\n'}cadastro no Coleta Seletiva de Itapecerica.
+            </Text>
+          </View>
 
-      <View style={styles.input}>
-        <InputMail onChange={(value) => setStateEmail(value)} placeholder="Email:" />
+          <View style={style.containerInput}>
+            <InputMail onChange={(value) => setStateEmail(value)} placeholder="Email:" />
 
-        <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha:" passwordInput={true} />
-      </View>
+            <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha:" passwordInput={true} />
+          </View>
 
-      <View style={styles.register}>
-        <Login titulo='Realizar Acesso' onPress={() => login()} />
-      </View>
+          <View style={style.register}>
+            <Login titulo='Realizar Acesso' onPress={() => login()} />
+          </View>
 
-      <View style={styles.bottomTitle}>
-        <Text style={{ fontSize: 35, color: '#fff' }}>
-          Não possui cadastro?
-        </Text>
-        <Text style={{ fontSize: 14, color: '#fff', textAlign: 'justify', lineHeight: 35 }}>
-          Caso não tenha um cadastro, não se preocupe!
-        </Text>
-        <Text style={{ fontSize: 14, color: '#fff', textAlign: 'justify', lineHeight: 35 }}>
-          Clique no botão para os próximos passos de cadastro.
-        </Text>
-      </View>
+          <View style={style.containerSecundaryitle}>
+            <Text style={style.secundaryTitle}>
+              Não possui cadastro?
+            </Text>
+            <Text style={style.secundarySubTitle}>
+              Caso não tenha um cadastro, não se preocupe!
+              {'\n'}
+              Clique no botão para os próximos passos de cadastro.
+            </Text>
+          </View>
 
-      <View style={styles.register}>
-        <Login titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
-      </View>
+          <View style={style.register}>
+            <Login titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
+          </View>
 
-      <View style={styles.bottomLogoPlace}>
-        <Logo2 />
-        <Logo3 />
-      </View>
+          <View style={style.bottomLogoPlace}>
+            <LogoAmbiental width={159} height={74} />
+            <LogoFehidro width={104} height={71}/>
+          </View>
 
-    </LinearGradient>
-  );
+        </LinearGradient>
+      </ScrollView>
+    </SafeAreaView>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#3f7424',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  topLogoPlace: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  title: {
-    width: '90%',
-    marginBottom: 10,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-
-  input: {
-    width: '80%',
-    marginBottom: 10,
-    justifyContent: 'space-around',
-  },
-
-  register: {
-    width: '80%',
-    marginBottom: 20,
-    marginTop: 20,
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  },
-
-  bottomTitle: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  bottomLogoPlace: {
-    flexDirection: 'row',
-    width: '90%',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginTop: 10,
-  },
-});

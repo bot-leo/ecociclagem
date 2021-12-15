@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    color: '#FFF'
+    color: '#FFF',
+    fontFamily:'nats-regular',
+    fontSize: 15, 
   }
 });

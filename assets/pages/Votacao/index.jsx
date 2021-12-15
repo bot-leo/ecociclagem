@@ -2,7 +2,6 @@ import React,{useEffect, useState} from 'react'
 import {Text, 
         View, 
         ScrollView, 
-        Image,
         SafeAreaView, 
         ToastAndroid} from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
@@ -57,18 +56,18 @@ export default function Votacao({route}){
     <SafeAreaView style={style.containerSafeView}>
       <StatusBar style="light" backgroundColor='#000' translucent={false} />
       <ScrollView style={style.contrainerScrollView} showsVerticalScrollIndicator={false} >
-        <LinearGradient colors={['#42D259', '#28496D',]}
+        <LinearGradient colors={['#42D259', '#759DC8',]}
         style={style.background}
           >
             
-            <LogoItapecirica />
+            <LogoItapecirica width={175} height={72}/>
 
             <View style={style.containerTextTitle}>
               <TextTitle title="Faça sua escolha!"/> 
             </View>
             
             <Text style={style.textInfo}>Olá! 
-            Eu sou o novo mascote da Coleta Seletiva de Itapecerica e conto com a sua ajuda para escolher meu nome!
+            Eu sou o novo mascote da Coleta Seletiva de {'\n'}Itapecerica e conto com a sua ajuda para escolher {'\n'} meu nome!
             VOTE!
             </Text>
 
@@ -111,8 +110,8 @@ export default function Votacao({route}){
             
 
             <View style={style.containerLogos}>
-              <LogoAmbiental/>
-              <LogoFehidro/>
+              <LogoAmbiental width={159} height={74} />
+              <LogoFehidro width={104} height={71}/>
             </View>
             
         </LinearGradient>
