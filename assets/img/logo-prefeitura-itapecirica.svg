@@ -1,5 +1,10 @@
+<<<<<<< HEAD:assets/imgs/PrefeituraLogoSVG.svg
 <svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect y="0.111115" width="50" height="21.7778" fill="url(#pattern0)"/>
+=======
+<svg viewBox="0 0 175 72" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="175" height="72" fill="url(#pattern0)"/>
+>>>>>>> 6c75960e443b91fa1624cc97e14792a550128559:assets/img/logo-prefeitura-itapecirica.svg
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_91_11531" transform="translate(0 0.120804) scale(0.000244141 0.000560527)"/>

@@ -4,8 +4,6 @@ import {ScrollView, View, Text} from 'react-native'
 
 import {globalStyle, width} from '../../style/globalStyle.js'
 import {style} from './style.js'
-import ConstructionScreen from "../../components/ConstructionScreen"
-import TextTitle from "../../components/TextTitle"
 
 export default function Login(){
   // const [latitude, setLatitude] = useState(-23.7341936)

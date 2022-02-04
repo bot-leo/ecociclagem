@@ -2,24 +2,29 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { screenOptions, universalScreenOptions } from './options'
 
-import { stackScreens } from '../navigation/StackScreens'
+import { stackScreensApp } from '../navigation/StackScreensApp'
 
 
 const { Navigator, Screen } = createNativeStackNavigator()
 
-function StackNavigation() {
+function StackNavigationApp() {
   return (
     <>
       <Navigator
-        initialRouteName="Login"
+        initialRouteName="Home"
         screenOptions={screenOptions}
       >
-        {stackScreens.map(({ name, component }) => (
+        {stackScreensApp.map(({ name, component }) => (
           <Screen
             key={name}
             name={name}
             component={component}
-            options={universalScreenOptions}
+            options={{headerShown:false, 
+              title:name,
+              headerStyle: {
+              backgroundColor: '#006738', 
+              }}}
+              
           />
         ))}
       </Navigator>
@@ -28,4 +33,4 @@ function StackNavigation() {
   )
 }
 
-export default StackNavigation
+export default StackNavigationApp

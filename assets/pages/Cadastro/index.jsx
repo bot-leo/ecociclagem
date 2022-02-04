@@ -12,6 +12,11 @@ import Footer from '../../components/Footer'
 
 
 export default function App() {
+  const navigation = useNavigation()
+
+  const showToast = (text) => {
+    ToastAndroid.show(text, ToastAndroid.SHORT)
+  }
 
   const data = {
     name: stateName,
@@ -73,8 +78,10 @@ export default function App() {
     if (passwordOdd) {
       axios(configurationObject)
         .then((response) => { //Cadastro realizado
-          alert(JSON.stringify(response.data))
+          // alert(JSON.stringify(response.data))
           console.log(response.data)
+          showToast('Sucesso!')
+          navigation.navigate("Login")
         })
         .catch((error) => { //requisição deu errado
           console.log(error);
@@ -86,7 +93,6 @@ export default function App() {
     }
 
   };
-
 
   return (
 
@@ -148,8 +154,11 @@ export default function App() {
         <Footer/>
       </View>
 
+      <View style={{marginTop:2, marginBottom:3, width:"100%"}}>
+        <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'poppins-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
+      </View>
     </LinearGradient>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
