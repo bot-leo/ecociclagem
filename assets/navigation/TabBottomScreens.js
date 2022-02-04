@@ -4,8 +4,7 @@ import{Home,
       RecyclingLibrary} from "../pages"
 
 
-import StackNavigationApp from '../navigation/StackNavigationApp'
-
+import StackNavigationApp from '../navigation/StackNavigationApp'                                
 
 const  tabBottomScreens = [
   {
@@ -14,15 +13,20 @@ const  tabBottomScreens = [
   },
   {
     name:"RecyclingLibrary",
-    component:RecyclingLibrary
+    component:Status
+  },
+  {
+    name:"Status",
+    component:Status
   },
   {
     name:"SearchMap",
     component:SearchMap
   },
   {
-    name:"Status",
+    name:"Usuario",
     component:Status
-  }]
+  },
+]
 
 export {tabBottomScreens}

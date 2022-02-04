@@ -21,10 +21,10 @@ export default function Home(){
   return (
     <SafeAreaView style={style.containerView}>
       <View style={style.containerContentMain}>
-        <Text style={style.textInfo}>Olá pessoal! Eu sou o Recicleiton, vou ajudá-los com o uso do aplicativo e com possíveis dúvidas sobre o Programa de Coleta Seletiva Municipal.</Text>
+        <Text style={style.textInfo}>Olá pessoal! Eu sou o <Text style={{fontWeight:"700"}}>Recicleiton</Text>, vou ajudá-los com o uso do aplicativo e com possíveis dúvidas sobre o Programa de Coleta Seletiva Municipal.</Text>
         
         <View style={style.containerMascote}>
-          <Mascote width={285} height={372}/>
+          <Mascote width={235} height={440}/>
         </View>
       </View>
       <View style={style.containerBottomView}>

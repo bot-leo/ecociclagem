@@ -1,23 +1,29 @@
 import React from 'react'
-import {View} from "react-native"
-import {globalStyle} from '../../style/globalStyle.js'
+import {View, Text, SafeAreaView} from "react-native"
 import {style} from './style.js'
-import ConstructionScreen from "../../components/ConstructionScreen"
-import ButtomGeneric from '../../components/ButtomGeneric.jsx'
-import TextTitle from "../../components/TextTitle"
 import {useNavigation} from "@react-navigation/native"
+
+import MascoteHappy from '../../img/mascote-happy.svg'
+import { LinearGradient } from 'expo-linear-gradient'
 
 export default function Status(){
   const navigation = useNavigation()
   return (
-    <ConstructionScreen>
-      <TextTitle title="Tela de Status"/>
+    <SafeAreaView style={style.containerContentView}>
+      <LinearGradient style={style.constainerGradient} colors={['#019444', '#006C39']}>
+        <Text style={{fontFamily:"poppins-bold", color:"#EEEEEE", fontSize:16}}>COLETA SELETIVA</Text>
+        <Text style={{fontFamily:"poppins-bold", color:"#EEEEEE", fontSize:25, width:200, textAlign:"center"}}>TELA EM CONSTRUÇÃO</Text>
+        <MascoteHappy/>
 
-      <View style={style.containerButtons}>
-        <ButtomGeneric buttonTitle="Projeto Ambiental" onPress={() => navigation.navigate('EnvironmentalProjectScreen')}/>
-        <ButtomGeneric buttonTitle="ReciclaArtes" onPress={() => navigation.navigate('Votacao')}/>
-      </View>
-    </ConstructionScreen>
+        <Text style={{fontFamily:"poppins-bold", color:"#EEEEEE", fontSize:20, textAlign:"center", width:285}}>EM BREVE UM NOVO
+          CONTEÚDO PARA VOCÊ!
+          {'\n'}
+          {'\n'}
+          AGRADECEMOS SUA 
+          PACIÊNCIA.
+        </Text>
+      </LinearGradient>
+    </SafeAreaView>
   )
 }
 

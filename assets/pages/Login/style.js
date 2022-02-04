@@ -36,10 +36,10 @@ export const style = StyleSheet.create({
   titlePrincipal: {
     fontSize: 48, 
     color: '#fff',
-    fontFamily:'nats-regular'
+    fontFamily:'poppins-regular'
   },
   subTitle:{
-    fontFamily:'nats-regular',
+    fontFamily:'poppins-regular',
     fontSize: 16, 
     color: '#fff', 
     textAlign: 'center', 
@@ -66,12 +66,12 @@ export const style = StyleSheet.create({
     alignItems: 'center',
   },
   secundaryTitle:{
-    fontFamily:'nats-regular',
+    fontFamily:'poppins-regular',
     fontSize: 40, 
     color: '#fff'
   },
   secundarySubTitle:{
-    fontFamily:'nats-regular',
+    fontFamily:'poppins-regular',
     fontSize: 16, 
     color: '#fff', 
     textAlign: 'center', 

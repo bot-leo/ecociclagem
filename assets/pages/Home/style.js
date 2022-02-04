@@ -18,12 +18,15 @@ export const style = StyleSheet.create({
   },
   textInfo:{
     width: 151,
+    fontFamily:'poppins-regular',
     fontSize:14,
-    color:'#FFFFFF'
+    color:'#FFFFFF',
+    marginLeft:25,
   },
   containerMascote:{
     position: 'relative',
     top: 0,
+    left: 10,
   },
 
 

@@ -25,13 +25,16 @@ export default function TabBottomNavigation(){
             iconName = 'home'
             break
           case 'SearchMap':
-            iconName = 'search'
+            iconName = 'map-marked-alt'
+            break
+          case 'Usuario':
+            iconName = 'user'
             break
           case 'Status':
-            iconName = 'chart-bar'
+            iconName = 'recycle'
             break
           case 'RecyclingLibrary':
-            iconName = 'book'
+            iconName = 'server'
             break
           default:
             iconName = 'circle'
@@ -40,11 +43,17 @@ export default function TabBottomNavigation(){
   
         return <Icon name={iconName} size={size} color={color} />;
       },
+      
+      tabBarStyle:{
+        backgroundColor: '#C4C4C4',                    
+      },
     })}
       tabBarOptions={{
-      activeTintColor: "#42CC2D",
-      inactiveTintColor: "#4A8042",
-    }}
+        activeTintColor: "#019444",
+        inactiveTintColor: "#006738",
+        showLabel: false,
+        
+      }}
                 >
       {tabBottomScreens.map(({name, component }) =>(
         <Screen

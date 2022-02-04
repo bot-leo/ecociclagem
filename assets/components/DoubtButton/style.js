@@ -11,6 +11,7 @@ export const style = StyleSheet.create({
   },
   texButton:{
     color: '#F2F2F2',
+    fontFamily:'poppins-regular',
     fontSize:8,
     textTransform:"uppercase",
     textAlign:'center'

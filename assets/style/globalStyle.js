@@ -12,6 +12,6 @@ export const globalStyle  = StyleSheet.create({
   textTitle:{
     fontSize:48,
     color:"#000",
-    fontFamily:'nats-regular',
+    fontFamily:'poppins-regular',
   }
 }) 
