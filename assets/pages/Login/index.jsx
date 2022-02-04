@@ -153,4 +153,4 @@ const styles = StyleSheet.create({
   footerPlace: {
     width: '100%',
    },
-});
+}) 
