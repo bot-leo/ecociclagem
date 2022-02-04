@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 export default function LoginButton(props) {
   return (
@@ -18,11 +18,11 @@ const styles = StyleSheet.create({
     height:36,
     borderRadius: 20,
     marginBottom:10
-    
+
   },
   textButton:{
-    fontFamily:'poppins-regular',
-    fontSize: 14, 
+    fontFamily:'poppins-bold',
+    fontSize: 11, 
     color: '#fff', 
 
   },

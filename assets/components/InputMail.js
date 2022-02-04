@@ -59,5 +59,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     borderBottomRightRadius: 20,
     textAlign:'center',
+    fontFamily:'poppins-regular',
+    fontSize:11
   }
 });
