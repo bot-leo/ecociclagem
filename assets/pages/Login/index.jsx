@@ -60,8 +60,7 @@ export default function App() {
             navigation.navigate('Votacao', response.data.data.id)
             showAlertLogin(response.data.data.name)
           }else{
-            navigation.navigate('ThanksScreen')
-            showAlertLoginVotou(response.data.data.name, response.data.data.voto)
+            navigation.navigate('TabBottomNavigation')
           }
         }else{
           alert("Erro Desconhecido")
@@ -123,7 +122,7 @@ export default function App() {
           </View>
 
           <View style={{marginTop:2, marginBottom:3, width:"100%"}}>
-              <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'nats-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
+              <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'poppins-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
           </View>
 
         </LinearGradient>

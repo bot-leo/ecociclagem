@@ -124,7 +124,7 @@ export default function App() {
       </View>
 
       <View style={style.title}>
-        <Text style={{ color: '#FFF', fontSize: 48,fontFamily:'nats-regular'  }}>
+        <Text style={{ color: '#FFF', fontSize: 48,fontFamily:'poppins-regular'  }}>
           Vamos Lá!
         </Text>
       </View>
@@ -172,7 +172,7 @@ export default function App() {
       </View>
 
       <View style={{marginTop:2, marginBottom:3, width:"100%"}}>
-        <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'nats-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
+        <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'poppins-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
       </View>
     </LinearGradient>
     </ScrollView>

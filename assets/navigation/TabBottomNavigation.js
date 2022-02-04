@@ -4,6 +4,8 @@ import {tabBottomScreens} from "./TabBottomScreens"
 import Icon from '@expo/vector-icons/FontAwesome5'
 
 
+import LogoColetaSeletiva from '../img/logo-coleta-seletiva.svg'
+
 const {Navigator, Screen} =createBottomTabNavigator()
 
 export default function TabBottomNavigation(){
@@ -11,7 +13,10 @@ export default function TabBottomNavigation(){
     <Navigator initialRouteName="Home"
 
     screenOptions={({ route }) => ({
-      headerShown: false,
+      headerShown: true,
+      headerStyle: {
+        backgroundColor: '#006738', 
+      },
       tabBarIcon: ({ color, size }) => {
         let iconName;
   
@@ -20,13 +25,16 @@ export default function TabBottomNavigation(){
             iconName = 'home'
             break
           case 'SearchMap':
-            iconName = 'search'
+            iconName = 'map-marked-alt'
+            break
+          case 'Usuario':
+            iconName = 'user'
             break
           case 'Status':
-            iconName = 'chart-bar'
+            iconName = 'recycle'
             break
           case 'RecyclingLibrary':
-            iconName = 'book'
+            iconName = 'server'
             break
           default:
             iconName = 'circle'
@@ -35,18 +43,27 @@ export default function TabBottomNavigation(){
   
         return <Icon name={iconName} size={size} color={color} />;
       },
+      
+      tabBarStyle:{
+        backgroundColor: '#C4C4C4',                    
+      },
     })}
       tabBarOptions={{
-      activeTintColor: "#42CC2D",
-      inactiveTintColor: "#4A8042",
-    }}
+        activeTintColor: "#019444",
+        inactiveTintColor: "#006738",
+        showLabel: false,
+        
+      }}
                 >
       {tabBottomScreens.map(({name, component }) =>(
         <Screen
           key={name}
           name={name}
           component={component}
-
+          options={({ navigation, route }) => ({
+            headerTitle: props => <LogoColetaSeletiva {...props} />,
+            headerTitleAlign: 'center'
+          })}
         />
       ))}
     </Navigator>

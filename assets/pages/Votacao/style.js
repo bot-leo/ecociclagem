@@ -26,7 +26,7 @@ export const style = StyleSheet.create({
     lineHeight: 35, 
     color:'#FFF', 
     marginTop:15,
-    fontFamily:"nats-regular"
+    fontFamily:"poppins-regular"
   },
   containerButtonsName:{
     width:width, 

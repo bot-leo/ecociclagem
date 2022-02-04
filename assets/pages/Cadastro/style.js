@@ -42,7 +42,7 @@ export const style = StyleSheet.create({
     textAlign: 'left', 
     lineHeight: 30,
     
-    fontFamily:'nats-regular',
+    fontFamily:'poppins-regular',
 
     marginBottom:20,
   },

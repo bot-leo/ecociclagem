@@ -20,7 +20,7 @@ export const style = StyleSheet.create({
   },
   containerTextTitle:{
     marginTop:15,
-    fontFamily:'nats-regular',
+    fontFamily:'poppins-regular',
   },
   textInfo:{
     fontSize: 16,
@@ -28,7 +28,7 @@ export const style = StyleSheet.create({
     color:'#FFF', 
     marginTop:15,
     paddingHorizontal:15,
-    fontFamily:'nats-regular',
+    fontFamily:'poppins-regular',
   },
   containerLogos:{
     width:'90%',

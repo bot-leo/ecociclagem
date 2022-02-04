@@ -21,7 +21,7 @@ export default function ButtonOptionName({
     titleButton:{
       color: '#fff',
       fontSize:15,
-      fontFamily:"nats-regular"
+      fontFamily:"poppins-regular"
     },
     
   })

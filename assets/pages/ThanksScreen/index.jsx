@@ -48,7 +48,7 @@ export default function ThanksScreen(){
           </View>
 
           <View style={{marginTop:2, marginBottom:3, width:"100%"}}>
-            <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'nats-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
+            <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'poppins-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
           </View>
             
         </LinearGradient>

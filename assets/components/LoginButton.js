@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     
   },
   textButton:{
-    fontFamily:'nats-regular',
+    fontFamily:'poppins-regular',
     fontSize: 14, 
     color: '#fff', 
   
