@@ -2,89 +2,55 @@ import { StyleSheet} from 'react-native'
 import {height, width} from "../../style/globalStyle"       
 
 
-
 export const style = StyleSheet.create({
-  containerSafe:{
-    flex:1
-  },
-  container: {
+  containerSafe: {
     flex: 1,
-    width: width,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  contrainerScrollView:{
-    flex:1, 
-    width: width, 
-    height: height
+  containerGradient: {
+    flex: 1,
+    backgroundColor: '#3f7424',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 
   topLogoPlace: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    
+    marginTop: 30
   },
 
-  containerTitle: {
-    flex:1,
+  midContent: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%'
+  },
+
+  title: {
     width: '90%',
     marginBottom: 10,
     justifyContent: 'center',
     alignItems: 'center'
   },
-  titlePrincipal: {
-    fontSize: 48, 
-    color: '#fff',
-    fontFamily:'poppins-regular'
-  },
-  subTitle:{
-    fontFamily:'poppins-regular',
-    fontSize: 16, 
-    color: '#fff', 
-    textAlign: 'center', 
-    lineHeight: 35 
-  },
 
-  containerInput: {
+  input: {
     width: '80%',
     marginBottom: 10,
-    justifyContent: 'space-around',
+    justifyContent: 'center',
   },
 
   register: {
-    width: '80%',
+    width: '50%',
     marginBottom: 20,
     marginTop: 20,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center'
   },
 
-  containerSecundaryitle: {
+  bottomTitle: {
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  secundaryTitle:{
-    fontFamily:'poppins-regular',
-    fontSize: 40, 
-    color: '#fff'
-  },
-  secundarySubTitle:{
-    fontFamily:'poppins-regular',
-    fontSize: 16, 
-    color: '#fff', 
-    textAlign: 'center', 
-    lineHeight: 35 
-  },
 
-  bottomLogoPlace: {
-    flexDirection: 'row',
+  footerPlace: {
     width: '100%',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    marginTop: 10,
-    marginBottom: 10,
-   
   },
-});
+}) 

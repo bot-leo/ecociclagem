@@ -77,107 +77,58 @@ export default function App() {
 
 
   return (
+    <SafeAreaView style={style.containerSafe}>
+      <StatusBar style="light" backgroundColor="#000"/>
+    <LinearGradient style={style.containerGradient} colors={['#019444', '#006A39']}>
 
-    <LinearGradient style={styles.container} colors={['#019444', '#006A39']}>
-
-      <View style={styles.topLogoPlace}>
-      <LogoColeta/>
+      <View style={style.topLogoPlace}>
+      <LogoColeta width={141} height={68}/>
       </View>
 
-      <View style={styles.midContent}>
-        <View style={styles.title}>
-          <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25 }}>
+      <View style={style.midContent}>
+        <View style={style.title}>
+          <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25, fontFamily: 'poppins-bold' }}>
             Olá! Tudo bem?
           </Text>
-          <Text style={{ fontSize: 12, color: '#fff', textAlign: 'center', lineHeight: 15, textAlign: 'center' }}>
+          <Text style={{ fontSize: 12, color: '#fff', textAlign: 'center', lineHeight: 15, textAlign: 'center', fontFamily: 'poppins-regular' }}>
             Por favor, insira abaixo as suas informações de cadastro no Coleta Seletiva de Itapecerica.
           </Text>
         </View>
 
-        <View style={styles.input}>
+        <View style={style.input}>
           <InputMail onChange={(value) => setStateEmail(value)} placeholder="E-mail" iconEmail />
 
           <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha" passwordInput={true} iconPass />
         </View>
 
-        <View style={styles.register}>
+        <View style={style.register}>
           <LoginButton titulo='Realizar Acesso' onPress={() => login()} />
         </View>
 
         <View style={{ width: '80%', height: 3, backgroundColor: '#fff', marginBottom: 20 }} />
 
 
-        <View style={styles.bottomTitle}>
-          <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25 }}>
+        <View style={style.bottomTitle}>
+          <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25, fontFamily: 'poppins-bold' }}>
             Não possui cadastro?
           </Text>
-          <Text style={{ fontSize: 12, color: '#fff', textAlign: 'justify', lineHeight: 15 }}>
+          <Text style={{ fontSize: 12, color: '#fff', textAlign: 'justify', lineHeight: 15,fontFamily: 'poppins-regular' }}>
             Caso não tenha um cadastro, não se preocupe!
           </Text>
         </View>
 
-        <View style={styles.register}>
+        <View style={style.register}>
           <LoginButton titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
         </View>
       </View>
 
-      <View style={styles.footerPlace}>
+      <View style={style.footerPlace}>
         <Footer />
       </View>
 
     </LinearGradient>
-
+    </SafeAreaView>
 
   );
 }
 
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    backgroundColor: '#3f7424',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-
-  topLogoPlace: {
-    marginTop: 10
-  },
-
-  midContent: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%'
-  },
-
-  title: {
-    width: '90%',
-    marginBottom: 10,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-
-  input: {
-    width: '80%',
-    marginBottom: 10,
-    justifyContent: 'center',
-  },
-
-  register: {
-    width: '50%',
-    marginBottom: 20,
-    marginTop: 20,
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  },
-
-  bottomTitle: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  footerPlace: {
-    width: '100%',
-  },
-}) 

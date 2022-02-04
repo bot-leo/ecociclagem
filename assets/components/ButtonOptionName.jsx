@@ -2,7 +2,6 @@ import React from 'react'
 import {Text, StyleSheet, TouchableOpacity} from "react-native"
 
 
-
 export default function ButtonOptionName({
   buttonTitle,
   onPress,

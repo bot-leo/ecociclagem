@@ -4,7 +4,6 @@ import { StatusBar } from 'expo-status-bar'
 import { globalStyle } from "../style/globalStyle"
 
 
-
 export default function ConstructionScreen(props){
   return(
     <View style={globalStyle.containerScreen}>

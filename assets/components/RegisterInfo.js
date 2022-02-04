@@ -37,5 +37,8 @@ const styles = StyleSheet.create({
   input: {
     color: '#414143',
     textAlign:'center',
+    fontFamily:'poppins-regular',
+    fontSize:11,
+    width: '100%',
   }
 });

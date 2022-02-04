@@ -1,14 +1,18 @@
-import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import RegisterInfo from '../../components/RegisterInfo';
-import Login from '../../components/LoginButton';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { useState } from 'react/cjs/react.development';
-import axios from 'axios';
-import { LinearGradient } from 'expo-linear-gradient';
-import api from '../../utils/api';
+import React,{useState} from 'react'
+import { Text, View, SafeAreaView, ToastAndroid } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+
+import axios from 'axios'
+import { LinearGradient } from 'expo-linear-gradient'
+
+import RegisterInfo from '../../components/RegisterInfo'
+import Login from '../../components/LoginButton'
+
+import api from '../../utils/api'
 import Footer from '../../components/Footer'
 import LogoColeta from '../../img/logo-coleta-seletiva.svg'
+import { StatusBar } from 'expo-status-bar'
+import { style } from './style'
 
 
 export default function App() {
@@ -65,7 +69,7 @@ export default function App() {
     const configurationObject = {
       url: `https://ecociclagem-api.herokuapp.com/cadastro`,
       method: "post",
-      data: {
+      data:{
         nome: stateName,
         sobrenome: stateLastName,
         cep: stateCep,
@@ -95,125 +99,69 @@ export default function App() {
   };
 
   return (
-
-    <LinearGradient style={styles.container} colors={['#019444', '#006A39']}>
-
-      <View style={styles.topLogoPlace}>
-        <LogoColeta/>
-      </View>
-
-      <View style={styles.midContent}>
-        <View style={styles.title}>
-          <Text style={{ color: '#FFF', fontSize: 17, lineHeight: 25 }}>
-            Vamos Lá!
-          </Text>
-        </View>
-        <View style={styles.subTitle}>
-          <Text style={{ color: '#FFF', fontSize: 12, textAlign: 'center', lineHeight: 14 }}>
-            Verificamos que esse é o seu primeiro acesso no aplicativo. Para continuar, insira seus dados para realizar seu cadastro:
-          </Text>
+    <SafeAreaView style={style.container}>
+      <StatusBar style="light" backgroundColor="#000"/>
+      <LinearGradient style={style.containerGradient} colors={['#019444', '#006A39']}>
+      
+        <View style={style.topLogoPlace}>
+          <LogoColeta width={141} height={68}/>
         </View>
 
-        <View style={styles.topInfo}>
-          <View style={styles.regInfo}>
-            <RegisterInfo
-              inputTitle='Nome'
-              onChange={(value) => setStateName(value)} />
+        <View style={style.midContent}>
+          <View style={style.title}>
+            <Text style={{ color: '#FFF', fontSize: 17, lineHeight: 25,fontFamily: 'poppins-bold' }}>
+              Vamos Lá!
+            </Text>
+          </View>
+          <View style={style.subTitle}>
+            <Text style={{ color: '#FFF', fontSize: 12, textAlign: 'center', lineHeight: 14, fontFamily: 'poppins-regular' }}>
+              Verificamos que esse é o seu primeiro acesso no aplicativo. Para continuar, insira seus dados para realizar seu cadastro:
+            </Text>
+          </View>
 
-            <RegisterInfo
-              inputTitle='E-mail'
-              onChange={(value) => setStateEmail(value)} />
+          <View style={style.topInfo}>
+            <View style={style.regInfo}>
+              <RegisterInfo
+                inputTitle='Nome'
+                onChange={(value) => setStateName(value)} />
 
-            <RegisterInfo
-              inputTitle='CEP'
-              onChange={(value) => setStateCep(value)}
-              inputType='decimal-pad'
-              onEnd={() => getAdress()} />
+              <RegisterInfo
+                inputTitle='E-mail'
+                onChange={(value) => setStateEmail(value)} />
 
-            <RegisterInfo
-              inputTitle='Senha'
-              onChange={(value) => setStatePass(value)}
-              passwordKeyboard={true}
-            />
+              <RegisterInfo
+                inputTitle='CEP'
+                onChange={(value) => setStateCep(value)}
+                inputType='decimal-pad'
+                onEnd={() => getAdress()} />
 
-            <RegisterInfo
-              inputTitle='Confirme a Senha'
-              onChange={(value) => setStateConfirmPass(value)}
-              passwordKeyboard={true}
-              onEnd={() => confirmPassword()}
-            />
+              <RegisterInfo
+                inputTitle='Senha'
+                onChange={(value) => setStatePass(value)}
+                passwordKeyboard={true}
+              />
+
+              <RegisterInfo
+                inputTitle='Confirme a Senha'
+                onChange={(value) => setStateConfirmPass(value)}
+                passwordKeyboard={true}
+                onEnd={() => confirmPassword()}
+              />
+            </View>
+          </View>
+
+          <View style={style.regButton}>
+            <Login titulo='Cadastrar' onPress={() => signIn()} />
+            <Login titulo='Voltar para Tela de Login' onPress={() => navigation.goBack()} />
           </View>
         </View>
 
-        <View style={styles.regButton}>
-          <Login titulo='Cadastrar' onPress={() => signIn()} />
+        <View style={style.footerPlace}>
+          <Footer/>
         </View>
-      </View>
 
-      <View style={styles.footerPlace}>
-        <Footer/>
-      </View>
-
-      <View style={{marginTop:2, marginBottom:3, width:"100%"}}>
-        <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'poppins-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
-      </View>
-    </LinearGradient>
+      </LinearGradient>
+    </SafeAreaView>
   )
 }
 
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    backgroundColor: '#3f7424',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-
-  topLogoPlace: {
-    marginTop: 10
-  },
-
-  midContent: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width:'100%'
-  },
-
-  title: {
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 5,
-  },
-
-  subTitle: {
-    width: '75%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 25,
-  },
-
-  topInfo: {
-    width: '100%',
-    justifyContent: 'space-between',
-    paddingHorizontal: 30,
-
-  },
-
-  regInfo: {
-    width: '100%',
-    flexDirection: 'column',
-    marginBottom: 25,
-  },
-
-  regButton: {
-    width: '50%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  footerPlace: {
-    width: '100%',
-   },
-});

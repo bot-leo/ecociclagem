@@ -1,7 +1,6 @@
 import React from "react"
 import {TouchableOpacity, Text, StyleSheet, Dimensions} from "react-native"
 
-
 export default function ButtomGeneric(props){
   return(
     <TouchableOpacity onPress={props.onPress} style={style.containerButton}>
