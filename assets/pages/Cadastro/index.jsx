@@ -7,8 +7,8 @@ import { useState } from 'react/cjs/react.development';
 import axios from 'axios';
 import { LinearGradient } from 'expo-linear-gradient';
 import api from '../../utils/api';
-import Logo4 from '../../imgs/Logo Coleta Seletiva 1.svg'
 import Footer from '../../components/Footer'
+import LogoColeta from '../../img/logo-coleta-seletiva.svg'
 
 
 export default function App() {
@@ -99,7 +99,7 @@ export default function App() {
     <LinearGradient style={styles.container} colors={['#019444', '#006A39']}>
 
       <View style={styles.topLogoPlace}>
-        <Logo4 />
+        <LogoColeta/>
       </View>
 
       <View style={styles.midContent}>

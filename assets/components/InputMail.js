@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, onChangeNumber, text, View, TextInput, Text } from 'react-native';
-import Email from '../imgs/Iconeemail.svg'
-import Pass from '../imgs/IconeSenha.svg'
+import Email from '../img/Iconeemail.svg'
+import Pass from '../img/IconeSenha.svg'
 
 
-export default function Componente(props) {
+export default function ImputMail(props) {
   return (
     <View style={styles.container}>
 

@@ -1,11 +1,11 @@
 import React from 'react'
 import { StyleSheet, text, View, } from 'react-native'
-import Logo1 from '../imgs/PrefeituraLogoSVG.svg'
-import Logo2 from '../imgs/PMALogoSVG.svg'
-import Logo3 from '../imgs/FehindroLogoSVG.svg'
+import Logo1 from '../img/brasao-e-Logo.svg'
+import Logo2 from '../img/logo-prefeitura-itapecerica.svg'
+import Logo3 from '../img/logo-fehidro-background.svg'
 
 
-export default function Componente(props) {
+export default function Footer(props) {
   return (
     <View style={styles.container}>
       <Logo1 width={85} height={85} margin={10} />

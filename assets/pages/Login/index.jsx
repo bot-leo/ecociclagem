@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
-import {  Text, 
-         View, 
-         Alert,
-         SafeAreaView,
-         ScrollView} from 'react-native'
+import {
+  Text,
+  View,
+  Alert,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet
+} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { LinearGradient } from 'expo-linear-gradient'
 import axios from 'axios'
 
-import {style} from "./style"
+import { style } from "./style"
 
-import Login from '../../components/LoginButton'
+import LoginButton from '../../components/LoginButton'
 import InputMail from '../../components/InputMail'
-import Logo4 from '../../imgs/Logo Coleta Seletiva 1.svg'
+import LogoColeta from '../../img/logo-coleta-seletiva.svg'
 import Footer from '../../components/Footer'
 
 
@@ -51,17 +54,17 @@ export default function App() {
     };
 
     axios(configurationObject)
-      .then((response) => { 
-        
+      .then((response) => {
+
         //Login realizado
-        if(response.data?.status === "Login sucessfull"){
-          if(response.data.data.voto === ""){
+        if (response.data?.status === "Login sucessfull") {
+          if (response.data.data.voto === "") {
             navigation.navigate('Votacao', response.data.data.id)
             showAlertLogin(response.data.data.name)
-          }else{
+          } else {
             navigation.navigate('TabBottomNavigation')
           }
-        }else{
+        } else {
           alert("Erro Desconhecido")
         }
       })
@@ -78,7 +81,7 @@ export default function App() {
     <LinearGradient style={styles.container} colors={['#019444', '#006A39']}>
 
       <View style={styles.topLogoPlace}>
-        <Logo4 />
+      <LogoColeta/>
       </View>
 
       <View style={styles.midContent}>
@@ -92,16 +95,16 @@ export default function App() {
         </View>
 
         <View style={styles.input}>
-          <InputMail onChange={(value) => setStateEmail(value)} placeholder="E-mail" iconEmail/>
+          <InputMail onChange={(value) => setStateEmail(value)} placeholder="E-mail" iconEmail />
 
           <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha" passwordInput={true} iconPass />
         </View>
 
         <View style={styles.register}>
-          <Login titulo='Realizar Acesso' onPress={() => login()} />
+          <LoginButton titulo='Realizar Acesso' onPress={() => login()} />
         </View>
 
-        <View style={{width: '80%', height: 3, backgroundColor:'#fff', marginBottom:20}}/>
+        <View style={{ width: '80%', height: 3, backgroundColor: '#fff', marginBottom: 20 }} />
 
 
         <View style={styles.bottomTitle}>
@@ -114,12 +117,12 @@ export default function App() {
         </View>
 
         <View style={styles.register}>
-          <Login titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
+          <LoginButton titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
         </View>
       </View>
 
       <View style={styles.footerPlace}>
-        <Footer/>
+        <Footer />
       </View>
 
     </LinearGradient>
@@ -144,7 +147,7 @@ const styles = StyleSheet.create({
   midContent: {
     justifyContent: 'center',
     alignItems: 'center',
-    width:'100%'
+    width: '100%'
   },
 
   title: {
@@ -176,5 +179,5 @@ const styles = StyleSheet.create({
 
   footerPlace: {
     width: '100%',
-   },
+  },
 }) 

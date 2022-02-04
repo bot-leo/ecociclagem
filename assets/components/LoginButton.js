@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-export default function Componente(props) {
+export default function LoginButton(props) {
   return (
     <TouchableOpacity style={styles.container} onPress={() => props.onPress()}>
         <Text style={styles.textButton}>{props.titulo}</Text>
