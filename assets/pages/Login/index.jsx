@@ -7,9 +7,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 import axios from 'axios';
-import Logo1 from '../../imgs/PrefeituraLogoSVG.svg'
-import Logo2 from '../../imgs/PMALogoSVG.svg'
-import Logo3 from '../../imgs/FehindroLogoSVG.svg'
+import Logo4 from '../../imgs/Logo Coleta Seletiva 1.svg'
+import Footer from '../../components/Footer'
 
 
 
@@ -51,53 +50,57 @@ export default function App() {
 
 
   return (
-    <LinearGradient style={styles.container} colors={['#42D259', '#28496D']}>
+
+    <LinearGradient style={styles.container} colors={['#019444', '#006A39']}>
 
       <View style={styles.topLogoPlace}>
-        <Logo1 />
+        <Logo4 />
       </View>
 
-      <View style={styles.title}>
-        <Text style={{ fontSize: 40, color: '#fff' }}>
-          Olá! Tudo bem?
-        </Text>
-        <Text style={{ fontSize: 14, color: '#fff', textAlign: 'center', lineHeight: 35 }}>
-          Por favor, insira abaixo as suas informações de cadastro no Coleta Seletiva de Itapecerica.
-        </Text>
+      <View style={styles.midContent}>
+        <View style={styles.title}>
+          <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25 }}>
+            Olá! Tudo bem?
+          </Text>
+          <Text style={{ fontSize: 12, color: '#fff', textAlign: 'center', lineHeight: 15, textAlign: 'center' }}>
+            Por favor, insira abaixo as suas informações de cadastro no Coleta Seletiva de Itapecerica.
+          </Text>
+        </View>
+
+        <View style={styles.input}>
+          <InputMail onChange={(value) => setStateEmail(value)} placeholder="E-mail" iconEmail/>
+
+          <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha" passwordInput={true} iconPass />
+        </View>
+
+        <View style={styles.register}>
+          <Login titulo='Realizar Acesso' onPress={() => login()} />
+        </View>
+
+        <View style={{width: '80%', height: 3, backgroundColor:'#fff', marginBottom:20}}/>
+
+
+        <View style={styles.bottomTitle}>
+          <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25 }}>
+            Não possui cadastro?
+          </Text>
+          <Text style={{ fontSize: 12, color: '#fff', textAlign: 'justify', lineHeight: 15 }}>
+            Caso não tenha um cadastro, não se preocupe!
+          </Text>
+        </View>
+
+        <View style={styles.register}>
+          <Login titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
+        </View>
       </View>
 
-      <View style={styles.input}>
-        <InputMail onChange={(value) => setStateEmail(value)} placeholder="Email:" />
-
-        <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha:" passwordInput={true} />
-      </View>
-
-      <View style={styles.register}>
-        <Login titulo='Realizar Acesso' onPress={() => login()} />
-      </View>
-
-      <View style={styles.bottomTitle}>
-        <Text style={{ fontSize: 35, color: '#fff' }}>
-          Não possui cadastro?
-        </Text>
-        <Text style={{ fontSize: 14, color: '#fff', textAlign: 'justify', lineHeight: 35 }}>
-          Caso não tenha um cadastro, não se preocupe!
-        </Text>
-        <Text style={{ fontSize: 14, color: '#fff', textAlign: 'justify', lineHeight: 35 }}>
-          Clique no botão para os próximos passos de cadastro.
-        </Text>
-      </View>
-
-      <View style={styles.register}>
-        <Login titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
-      </View>
-
-      <View style={styles.bottomLogoPlace}>
-        <Logo2 />
-        <Logo3 />
+      <View style={styles.footerPlace}>
+        <Footer/>
       </View>
 
     </LinearGradient>
+
+
   );
 }
 
@@ -107,13 +110,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#3f7424',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },
 
   topLogoPlace: {
-    width: '100%',
+    marginTop: 10
+  },
+
+  midContent: {
     justifyContent: 'center',
     alignItems: 'center',
+    width:'100%'
   },
 
   title: {
@@ -126,11 +133,11 @@ const styles = StyleSheet.create({
   input: {
     width: '80%',
     marginBottom: 10,
-    justifyContent: 'space-around',
+    justifyContent: 'center',
   },
 
   register: {
-    width: '80%',
+    width: '50%',
     marginBottom: 20,
     marginTop: 20,
     justifyContent: 'space-around',
@@ -143,11 +150,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  bottomLogoPlace: {
-    flexDirection: 'row',
-    width: '90%',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginTop: 10,
-  },
+  footerPlace: {
+    width: '100%',
+   },
 });

@@ -1,35 +1,41 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, onChangeNumber, text, View, TextInput } from 'react-native';
+import { height } from '../style/globalStyle';
 
 
 export default function Componente(props) {
   return (
     <View style={styles.container}>
       <TextInput
-        placeholderTextColor='#FFF'
+        placeholderTextColor='#414143'
         placeholder={props.inputTitle}
         style={styles.input}
         onChangeText={(value) => props.onChange(value)}
         keyboardType={props.inputType}
         onEndEditing={props.onEnd}
         secureTextEntry={props.passwordKeyboard}
-      >
-      </TextInput>
-
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    borderBottomWidth: 1,
-    borderColor: '#FFF',
-    maxWidth: '100%',
-    minWidth:'45%'
+    backgroundColor: '#EEEEEE',
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: '#055C30',
+    width: '100%',
+    height: height/17.8,
+    alignItems: 'center',
+    justifyContent:'center',
+    marginBottom: 15,
+
   },
 
   input: {
-    color: '#FFF'
+    color: '#414143',
+    textAlign:'center',
   }
 });

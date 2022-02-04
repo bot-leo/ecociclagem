@@ -13,12 +13,12 @@ export default function Componente(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#2C52A0',
+    backgroundColor: '#04366B',
     alignItems: 'center',
     justifyContent: 'center',
     width:'100%',
-    height:30,
-    borderRadius: 10,
+    height:36,
+    borderRadius: 20,
     marginBottom:10
   },
 });

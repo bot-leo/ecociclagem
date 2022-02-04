@@ -7,10 +7,8 @@ import { useState } from 'react/cjs/react.development';
 import axios from 'axios';
 import { LinearGradient } from 'expo-linear-gradient';
 import api from '../../utils/api';
-
-import Logo1 from '../../imgs/PrefeituraLogoSVG.svg'
-import Logo2 from '../../imgs/PMALogoSVG.svg'
-import Logo3 from '../../imgs/FehindroLogoSVG.svg'
+import Logo4 from '../../imgs/Logo Coleta Seletiva 1.svg'
+import Footer from '../../components/Footer'
 
 
 export default function App() {
@@ -87,64 +85,67 @@ export default function App() {
       alert("As senhas são diferentes")
     }
 
-
   };
 
 
   return (
 
-    <LinearGradient style={styles.container} colors={['#42D259', '#28496D']}>
+    <LinearGradient style={styles.container} colors={['#019444', '#006A39']}>
 
       <View style={styles.topLogoPlace}>
-        <Logo1 />
+        <Logo4 />
       </View>
 
-      <View style={styles.title}>
-        <Text style={{ color: '#FFF', fontSize: 35, }}>
-          Vamos Lá!
-        </Text>
-      </View>
-      <View style={styles.subTitle}>
-        <Text style={{ color: '#FFF', fontSize: 13, textAlign: 'justify', lineHeight: 30 }}>
-          Verificamos que esse é o seu primeiro acesso no aplicativo. Para continuar, insira seus dados para realizar seu cadastro:
-        </Text>
-      </View>
-
-      <View style={styles.topInfo}>
-        <View style={styles.infoName}>
-          <RegisterInfo inputTitle='Nome:' onChange={(value) => setStateName(value)} />
-
-          <RegisterInfo inputTitle='Sobrenome:' onChange={(value) => setStateLastName(value)} />
-
-          <RegisterInfo inputTitle='Data de Nascimento:' onChange={(value) => setStateBirth(value)} />
-
-          <RegisterInfo inputTitle='E-mail:' onChange={(value) => setStateEmail(value)} />
-
-          <RegisterInfo
-            inputTitle='Senha'
-            onChange={(value) => setStatePass(value)}
-            passwordKeyboard={true}
-          />
-
-          <RegisterInfo
-            inputTitle='Confirmação de Senha'
-            onChange={(value) => setStateConfirmPass(value)}
-            passwordKeyboard={true}
-            onEnd={() => confirmPassword()}
-          />
-
-          <RegisterInfo inputTitle='CEP:' onChange={(value) => setStateCep(value)} inputType='decimal-pad' onEnd={() => getAdress()} />
+      <View style={styles.midContent}>
+        <View style={styles.title}>
+          <Text style={{ color: '#FFF', fontSize: 17, lineHeight: 25 }}>
+            Vamos Lá!
+          </Text>
+        </View>
+        <View style={styles.subTitle}>
+          <Text style={{ color: '#FFF', fontSize: 12, textAlign: 'center', lineHeight: 14 }}>
+            Verificamos que esse é o seu primeiro acesso no aplicativo. Para continuar, insira seus dados para realizar seu cadastro:
+          </Text>
         </View>
 
+        <View style={styles.topInfo}>
+          <View style={styles.regInfo}>
+            <RegisterInfo
+              inputTitle='Nome'
+              onChange={(value) => setStateName(value)} />
+
+            <RegisterInfo
+              inputTitle='E-mail'
+              onChange={(value) => setStateEmail(value)} />
+
+            <RegisterInfo
+              inputTitle='CEP'
+              onChange={(value) => setStateCep(value)}
+              inputType='decimal-pad'
+              onEnd={() => getAdress()} />
+
+            <RegisterInfo
+              inputTitle='Senha'
+              onChange={(value) => setStatePass(value)}
+              passwordKeyboard={true}
+            />
+
+            <RegisterInfo
+              inputTitle='Confirme a Senha'
+              onChange={(value) => setStateConfirmPass(value)}
+              passwordKeyboard={true}
+              onEnd={() => confirmPassword()}
+            />
+          </View>
+        </View>
+
+        <View style={styles.regButton}>
+          <Login titulo='Cadastrar' onPress={() => signIn()} />
+        </View>
       </View>
 
-      <View style={styles.regButton}>
-        <Login titulo='Cadastrar' onPress={() => signIn()} />
-      </View>
-
-      <View style={styles.bottomLogoPlace}>
-        <Logo2 />
-        <Logo3 />
+      <View style={styles.footerPlace}>
+        <Footer/>
       </View>
 
     </LinearGradient>
@@ -157,57 +158,53 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#3f7424',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },
 
   topLogoPlace: {
-    width: '100%',
+    marginTop: 10
+  },
+
+  midContent: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    width:'100%'
   },
 
   title: {
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 40,
+    marginBottom: 5,
   },
+
   subTitle: {
-    width: '98%',
+    width: '75%',
     alignItems: 'center',
     justifyContent: 'center',
-
+    marginBottom: 25,
   },
 
   topInfo: {
     width: '100%',
-    height: 200,
     justifyContent: 'space-between',
     paddingHorizontal: 30,
 
   },
 
-  infoName: {
+  regInfo: {
     width: '100%',
     flexDirection: 'column',
-    justifyContent: 'space-between',
-    height: 300,
+    marginBottom: 25,
   },
 
   regButton: {
-    width: '90%',
-    marginTop: 150,
+    width: '50%',
     justifyContent: 'center',
     alignItems: 'center',
   },
 
-  bottomLogoPlace: {
-    flexDirection: 'row',
-    width: '90%',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    marginTop: 10,
-    marginBottom:15,
-  },
+  footerPlace: {
+    width: '100%',
+   },
 });
