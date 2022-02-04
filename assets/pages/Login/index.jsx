@@ -60,7 +60,7 @@ export default function App() {
             navigation.navigate('Votacao', response.data.data.id)
             showAlertLogin(response.data.data.name)
           }else{
-            navigation.navigate('ThanksScreen')
+            navigation.navigate('TabBottomNavigation')
             showAlertLoginVotou(response.data.data.name, response.data.data.voto)
           }
         }else{

@@ -11,7 +11,7 @@ export const globalStyle  = StyleSheet.create({
   },
   textTitle:{
     fontSize:48,
-    color:"#FFF",
+    color:"#000",
     fontFamily:'nats-regular',
   }
 }) 

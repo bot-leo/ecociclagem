@@ -4,6 +4,8 @@ import {tabBottomScreens} from "./TabBottomScreens"
 import Icon from '@expo/vector-icons/FontAwesome5'
 
 
+import LogoColetaSeletiva from '../img/logo-coleta-seletiva.svg'
+
 const {Navigator, Screen} =createBottomTabNavigator()
 
 export default function TabBottomNavigation(){
@@ -11,7 +13,10 @@ export default function TabBottomNavigation(){
     <Navigator initialRouteName="Home"
 
     screenOptions={({ route }) => ({
-      headerShown: false,
+      headerShown: true,
+      headerStyle: {
+        backgroundColor: '#006738', 
+      },
       tabBarIcon: ({ color, size }) => {
         let iconName;
   
@@ -46,7 +51,10 @@ export default function TabBottomNavigation(){
           key={name}
           name={name}
           component={component}
-
+          options={({ navigation, route }) => ({
+            headerTitle: props => <LogoColetaSeletiva {...props} />,
+            headerTitleAlign: 'center'
+          })}
         />
       ))}
     </Navigator>

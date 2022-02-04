@@ -4,11 +4,13 @@ import{Home,
       RecyclingLibrary} from "../pages"
 
 
-const  tabBottomScreens = [
+import StackNavigationApp from '../navigation/StackNavigationApp'
 
+
+const  tabBottomScreens = [
   {
     name:"Home",
-    component:Home
+    component:StackNavigationApp
   },
   {
     name:"RecyclingLibrary",
