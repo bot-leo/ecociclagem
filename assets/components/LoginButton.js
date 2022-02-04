@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-export default function Componente(props) {
+export default function LoginButton(props) {
   return (
     <TouchableOpacity style={styles.container} onPress={() => props.onPress()}>
         <Text style={styles.textButton}>{props.titulo}</Text>
@@ -11,19 +11,19 @@ export default function Componente(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#2C52A0',
-    width:'100%',
-    height:32,
-    alignItems:'center',
+    backgroundColor: '#04366B',
+    alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10,
-    
+    width:'100%',
+    height:36,
+    borderRadius: 20,
+    marginBottom:10
     
   },
   textButton:{
     fontFamily:'poppins-regular',
     fontSize: 14, 
     color: '#fff', 
-  
+
   },
 })

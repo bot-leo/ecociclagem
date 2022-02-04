@@ -1,22 +1,24 @@
 import React, { useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
-import {  Text, 
-         View, 
-         Alert,
-         SafeAreaView,
-         ScrollView} from 'react-native'
+import {
+  Text,
+  View,
+  Alert,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet
+} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { LinearGradient } from 'expo-linear-gradient'
 import axios from 'axios'
 
-import {style} from "./style"
+import { style } from "./style"
 
-import Login from '../../components/LoginButton'
+import LoginButton from '../../components/LoginButton'
 import InputMail from '../../components/InputMail'
+import LogoColeta from '../../img/logo-coleta-seletiva.svg'
+import Footer from '../../components/Footer'
 
-import LogoAmbiental from '../../img/logo-meio-ambiente-arvore.svg'
-import LogoFehidro from '../../img/logo-fehidro-background.svg'
-import LogoItapecirica from '../../img/logo-prefeitura-itapecirica.svg'
 
 export default function App() {
 
@@ -52,17 +54,17 @@ export default function App() {
     };
 
     axios(configurationObject)
-      .then((response) => { 
-        
+      .then((response) => {
+
         //Login realizado
-        if(response.data?.status === "Login sucessfull"){
-          if(response.data.data.voto === ""){
+        if (response.data?.status === "Login sucessfull") {
+          if (response.data.data.voto === "") {
             navigation.navigate('Votacao', response.data.data.id)
             showAlertLogin(response.data.data.name)
-          }else{
+          } else {
             navigation.navigate('TabBottomNavigation')
           }
-        }else{
+        } else {
           alert("Erro Desconhecido")
         }
       })
@@ -75,58 +77,107 @@ export default function App() {
 
 
   return (
-    <SafeAreaView style={style.containerSafe}>
-     <StatusBar style="light" backgroundColor='#000' translucent={false} />
-     <ScrollView style={style.contrainerScrollView} showsVerticalScrollIndicator={false} >
-        <LinearGradient style={style.container} colors={['#42D259', '#759DC8']}>
 
-          <View style={style.topLogoPlace}>
-            <LogoItapecirica width={175} height={72}/>
-          </View>
+    <LinearGradient style={styles.container} colors={['#019444', '#006A39']}>
 
-          <View style={style.containerTitle}>
-            <Text style={style.titlePrincipal}>Olá! Tudo bem?</Text>
-            <Text style={style.subTitle}>
-              Por favor, insira abaixo as suas informações de{'\n'}cadastro no Coleta Seletiva de Itapecerica.
-            </Text>
-          </View>
+      <View style={styles.topLogoPlace}>
+      <LogoColeta/>
+      </View>
 
-          <View style={style.containerInput}>
-            <InputMail onChange={(value) => setStateEmail(value)} placeholder="Email:" />
+      <View style={styles.midContent}>
+        <View style={styles.title}>
+          <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25 }}>
+            Olá! Tudo bem?
+          </Text>
+          <Text style={{ fontSize: 12, color: '#fff', textAlign: 'center', lineHeight: 15, textAlign: 'center' }}>
+            Por favor, insira abaixo as suas informações de cadastro no Coleta Seletiva de Itapecerica.
+          </Text>
+        </View>
 
-            <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha:" passwordInput={true} />
-          </View>
+        <View style={styles.input}>
+          <InputMail onChange={(value) => setStateEmail(value)} placeholder="E-mail" iconEmail />
 
-          <View style={style.register}>
-            <Login titulo='Realizar Acesso' onPress={() => login()} />
-          </View>
+          <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha" passwordInput={true} iconPass />
+        </View>
 
-          <View style={style.containerSecundaryitle}>
-            <Text style={style.secundaryTitle}>
-              Não possui cadastro?
-            </Text>
-            <Text style={style.secundarySubTitle}>
-              Caso não tenha um cadastro, não se preocupe!
-              {'\n'}
-              Clique no botão para os próximos passos de cadastro.
-            </Text>
-          </View>
+        <View style={styles.register}>
+          <LoginButton titulo='Realizar Acesso' onPress={() => login()} />
+        </View>
 
-          <View style={style.register}>
-            <Login titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
-          </View>
+        <View style={{ width: '80%', height: 3, backgroundColor: '#fff', marginBottom: 20 }} />
 
-          <View style={style.bottomLogoPlace}>
-            <LogoAmbiental width={159} height={74} />
-            <LogoFehidro width={104} height={71}/>
-          </View>
 
-          <View style={{marginTop:2, marginBottom:3, width:"100%"}}>
-              <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'poppins-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
-          </View>
+        <View style={styles.bottomTitle}>
+          <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25 }}>
+            Não possui cadastro?
+          </Text>
+          <Text style={{ fontSize: 12, color: '#fff', textAlign: 'justify', lineHeight: 15 }}>
+            Caso não tenha um cadastro, não se preocupe!
+          </Text>
+        </View>
 
-        </LinearGradient>
-      </ScrollView>
-    </SafeAreaView>
-  )
+        <View style={styles.register}>
+          <LoginButton titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
+        </View>
+      </View>
+
+      <View style={styles.footerPlace}>
+        <Footer />
+      </View>
+
+    </LinearGradient>
+
+
+  );
 }
+
+const styles = StyleSheet.create({
+
+  container: {
+    flex: 1,
+    backgroundColor: '#3f7424',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+
+  topLogoPlace: {
+    marginTop: 10
+  },
+
+  midContent: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%'
+  },
+
+  title: {
+    width: '90%',
+    marginBottom: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  input: {
+    width: '80%',
+    marginBottom: 10,
+    justifyContent: 'center',
+  },
+
+  register: {
+    width: '50%',
+    marginBottom: 20,
+    marginTop: 20,
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+
+  bottomTitle: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  footerPlace: {
+    width: '100%',
+  },
+}) 
