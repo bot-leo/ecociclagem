@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { Text, View, SafeAreaView, ToastAndroid } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
@@ -24,22 +24,20 @@ export default function App() {
 
   const data = {
     name: stateName,
-    lastname: stateLastName,
-    birthday: stateBirth,
     cep: stateCep,
-    email: stateEmail,
+    email: stateEmail?.toLowerCase(),
     pass: statePass,
   }
 
   const [stateName, setStateName] = useState('')
-  const [stateLastName, setStateLastName] = useState('')
-  const [stateBirth, setStateBirth] = useState('')
   const [stateCep, setStateCep] = useState('')
   const [stateEmail, setStateEmail] = useState('')
   const [statePass, setStatePass] = useState('')
   const [stateConfirmPass, setStateConfirmPass] = useState('')
 
   const [passwordOdd, setPasswordOdd] = useState(false)
+
+  const [formDone, setFormDone] = useState(false)
 
   const confirmPassword = () => {
     if (statePass == stateConfirmPass) {
@@ -50,30 +48,32 @@ export default function App() {
     }
   }
 
-  const getAdress = async () => {
-    axios({
-      method: 'get',
-      url: 'https://ecociclagem-api.herokuapp.com/cep',
-      data: { 'cep': '45020330' }
-    })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error.response)
-      })
-  }
+  useEffect(() => {
+    if (stateName != '' && stateCep != '' && stateEmail != '' && statePass != '' && stateConfirmPass != '') {
+      setFormDone(true)
+      console.log('preenchido')
+    }
+    else {
+      setFormDone(false)
+      console.log('vazio')
+    }
+  },
+    [
+      stateName,
+      stateCep,
+      stateEmail,
+      statePass,
+      stateConfirmPass
+    ])
+
 
   const signIn = () => {
-
     const configurationObject = {
       url: `https://ecociclagem-api.herokuapp.com/cadastro`,
       method: "post",
-      data:{
+      data: {
         nome: stateName,
-        sobrenome: stateLastName,
         cep: stateCep,
-        nascimento: stateBirth,
         email: stateEmail,
         senha: statePass
       },
@@ -82,10 +82,9 @@ export default function App() {
     if (passwordOdd) {
       axios(configurationObject)
         .then((response) => { //Cadastro realizado
-          // alert(JSON.stringify(response.data))
           console.log(response.data)
           showToast('Sucesso!')
-          navigation.navigate("Login")
+          navigation.navigate("Home")
         })
         .catch((error) => { //requisição deu errado
           console.log(error);
@@ -100,16 +99,16 @@ export default function App() {
 
   return (
     <SafeAreaView style={style.container}>
-      <StatusBar style="light" backgroundColor="#000"/>
+      <StatusBar style="light" backgroundColor="#000" />
       <LinearGradient style={style.containerGradient} colors={['#019444', '#006A39']}>
-      
+
         <View style={style.topLogoPlace}>
-          <LogoColeta width={141} height={68}/>
+          <LogoColeta width={141} height={68} />
         </View>
 
         <View style={style.midContent}>
           <View style={style.title}>
-            <Text style={{ color: '#FFF', fontSize: 17, lineHeight: 25,fontFamily: 'poppins-bold' }}>
+            <Text style={{ color: '#FFF', fontSize: 17, lineHeight: 25, fontFamily: 'poppins-bold' }}>
               Vamos Lá!
             </Text>
           </View>
@@ -132,8 +131,7 @@ export default function App() {
               <RegisterInfo
                 inputTitle='CEP'
                 onChange={(value) => setStateCep(value)}
-                inputType='decimal-pad'
-                onEnd={() => getAdress()} />
+                inputType='decimal-pad' />
 
               <RegisterInfo
                 inputTitle='Senha'
@@ -151,13 +149,13 @@ export default function App() {
           </View>
 
           <View style={style.regButton}>
-            <Login titulo='Cadastrar' onPress={() => signIn()} />
+            <Login titulo='Cadastrar' onPress={() => signIn()} disabled={!formDone} />
             <Login titulo='Voltar para Tela de Login' onPress={() => navigation.goBack()} />
           </View>
         </View>
 
         <View style={style.footerPlace}>
-          <Footer/>
+          <Footer />
         </View>
 
       </LinearGradient>
