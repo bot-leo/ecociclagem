@@ -33,7 +33,7 @@ export default function TabBottomNavigation(){
           case 'Status':
             iconName = 'recycle'
             break
-          case 'RecyclingLibrary':
+          case 'BibliotecaMateriais':
             iconName = 'server'
             break
           default:
