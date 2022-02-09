@@ -48,7 +48,7 @@ export default function App() {
       url: `https://ecociclagem-api.herokuapp.com/login`,
       method: "post",
       data: {
-        email: stateEmail,
+        email: stateEmail.toLowerCase(),
         senha: statePass
       },
     };
@@ -59,7 +59,7 @@ export default function App() {
         //Login realizado
         if (response.data?.status === "Login sucessfull") {
           if (response.data.data.voto === "") {
-            navigation.navigate('Votacao', response.data.data.id)
+            navigation.navigate('Home', response.data.data.id)
             showAlertLogin(response.data.data.name)
           } else {
             navigation.navigate('TabBottomNavigation')
