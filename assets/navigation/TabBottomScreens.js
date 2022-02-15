@@ -1,7 +1,7 @@
 import{Home,
       Status,
       SearchMap,
-      RecyclingLibrary} from "../pages"
+      BibliotecaMateriais} from "../pages"
 
 
 import StackNavigationApp from '../navigation/StackNavigationApp'                                
@@ -12,8 +12,8 @@ const  tabBottomScreens = [
     component:StackNavigationApp
   },
   {
-    name:"RecyclingLibrary",
-    component:Status
+    name:"BibliotecaMateriais",
+    component:BibliotecaMateriais
   },
   {
     name:"Status",

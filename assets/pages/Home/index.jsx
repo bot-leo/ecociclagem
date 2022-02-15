@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
-import {globalStyle, height, width} from '../../style/globalStyle.js'
+import { Text } from 'react-native'
 import {style} from './style.js'
 
 import {View, SafeAreaView} from "react-native"
@@ -11,8 +11,8 @@ import { DoubtButton } from '../../components/DoubtButton/index.jsx'
 import IconReciclagem from '../../img/icon-reciclagem.svg'
 import IconColetaHome from '../../img/icon-coleta-home.svg'
 import IconPontoColeta from '../../img/icone-ponto-de-entrega.svg'
-import Mascote from '../../img/mascote-home.svg'
-import { Text } from 'react-native'
+
+import MascoteRegular from '../../img/mascote-regular.svg'
 
 export default function Home(){
 
@@ -24,7 +24,7 @@ export default function Home(){
         <Text style={style.textInfo}>Olá pessoal! Eu sou o <Text style={{fontWeight:"700"}}>Recicleiton</Text>, vou ajudá-los com o uso do aplicativo e com possíveis dúvidas sobre o Programa de Coleta Seletiva Municipal.</Text>
         
         <View style={style.containerMascote}>
-          <Mascote width={235} height={440}/>
+          <MascoteRegular width={235} height={310}/>
         </View>
       </View>
       <View style={style.containerBottomView}>

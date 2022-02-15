@@ -84,7 +84,7 @@ export default function App() {
         .then((response) => { //Cadastro realizado
           console.log(response.data)
           showToast('Sucesso!')
-          navigation.navigate("Home")
+          navigation.navigate("TabBottomNavigation")
         })
         .catch((error) => { //requisição deu errado
           console.log(error);
