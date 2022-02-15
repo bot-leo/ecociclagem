@@ -1,9 +1,13 @@
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
-export default function Componente(props) {
+export default function LoginButton(props) {
   return (
-    <TouchableOpacity style={styles.container} onPress={() => props.onPress()}>
+    <TouchableOpacity 
+    style={[styles.container, {backgroundColor: props.disabled ? '#c4c4c4' : '#04366B'}]} 
+    onPress={() => props.onPress()}
+    disabled={props.disabled ? true : false}
+    >
         <Text style={styles.textButton}>{props.titulo}</Text>
     </TouchableOpacity>
   )
@@ -11,19 +15,19 @@ export default function Componente(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#2C52A0',
-    width:'100%',
-    height:32,
-    alignItems:'center',
+    backgroundColor: '#04366B',
+    alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 10,
-    
-    
+    width:'100%',
+    height:36,
+    borderRadius: 20,
+    marginBottom:10
+
   },
   textButton:{
-    fontFamily:'nats-regular',
-    fontSize: 14, 
+    fontFamily:'poppins-bold',
+    fontSize: 11, 
     color: '#fff', 
-  
+
   },
 })

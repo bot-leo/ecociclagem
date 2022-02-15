@@ -1,26 +1,32 @@
 import{Home,
       Status,
       SearchMap,
-      RecyclingLibrary} from "../pages"
+      BibliotecaMateriais} from "../pages"
 
+
+import StackNavigationApp from '../navigation/StackNavigationApp'                                
 
 const  tabBottomScreens = [
-
   {
     name:"Home",
-    component:Home
+    component:StackNavigationApp
   },
   {
-    name:"RecyclingLibrary",
-    component:RecyclingLibrary
+    name:"BibliotecaMateriais",
+    component:BibliotecaMateriais
+  },
+  {
+    name:"Status",
+    component:Status
   },
   {
     name:"SearchMap",
     component:SearchMap
   },
   {
-    name:"Status",
+    name:"Usuario",
     component:Status
-  }]
+  },
+]
 
 export {tabBottomScreens}

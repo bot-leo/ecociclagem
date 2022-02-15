@@ -22,12 +22,15 @@ export const style = StyleSheet.create({
     width:width - 40,
     maxHeight:150,
     borderRadius:10,
-    backgroundColor:"#fff",
-    marginHorizontal:20
+    backgroundColor:"#019444",
+    marginHorizontal:20,
+    justifyContent:"center",
+    alignItems:"center"
   },
   textMaterial:{
-    fontSize:20,
-    color:"#ff0078"
+    fontSize:16,
+    fontFamily:"poppins-bold",
+    color:"#FFFFFF"
   },
 })
 

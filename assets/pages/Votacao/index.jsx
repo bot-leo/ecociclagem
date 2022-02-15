@@ -15,10 +15,7 @@ import TextTitle from "../../components/TextTitle"
 import Login from '../../components/LoginButton'
 import ButtonOptionName from '../../components/ButtonOptionName.jsx'
 
-import MascoteOff from '../../img/sombra-mascote.svg'
-import LogoAmbiental from '../../img/logo-meio-ambiente-arvore.svg'
-import LogoFehidro from '../../img/logo-fehidro-background.svg'
-import LogoItapecirica from '../../img/logo-prefeitura-itapecirica.svg'
+
 
 
 export default function Votacao({route}){
@@ -60,7 +57,7 @@ export default function Votacao({route}){
         style={style.background}
           >
             
-            <LogoItapecirica width={175} height={72}/>
+            
 
             <View style={style.containerTextTitle}>
               <TextTitle title="Faça sua escolha!"/> 
@@ -72,7 +69,7 @@ export default function Votacao({route}){
             </Text>
 
 
-            <MascoteOff/>
+      
 
             <View style={style.containerButtonsName}>
               <ButtonOptionName buttonTitle="Recicleiton" 
@@ -110,13 +107,12 @@ export default function Votacao({route}){
             
 
             <View style={style.containerLogos}>
-              <LogoAmbiental width={159} height={74} />
-              <LogoFehidro width={104} height={71}/>
+              
             </View>
 
 
             <View style={{marginTop:2, marginBottom:3, width:"100%"}}>
-              <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'nats-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
+              <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'poppins-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
             </View>
             
         </LinearGradient>

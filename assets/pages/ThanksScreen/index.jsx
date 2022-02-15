@@ -7,10 +7,7 @@ import {style} from './style.js'
 
 import TextTitle from "../../components/TextTitle"
 
-import MascoteAgradecimento from '../../img/mascote-agradecimento.svg'
-import LogoAmbiental from '../../img/logo-meio-ambiente-arvore.svg'
-import LogoFehidro from '../../img/logo-fehidro-background.svg'
-import LogoItapecirica from '../../img/logo-prefeitura-itapecirica.svg'
+
 1
 
 
@@ -23,7 +20,7 @@ export default function ThanksScreen(){
         style={style.background}
           >
             
-            <LogoItapecirica width={175} height={72}/>
+           
 
             <View style={style.containerTextTitle}>
               <TextTitle title="Muito Obrigado!"/> 
@@ -38,17 +35,16 @@ export default function ThanksScreen(){
             
 
       
-          <MascoteAgradecimento/>
+         
           
           
 
           <View style={style.containerLogos}>
-            <LogoAmbiental width={159} height={74} />
-            <LogoFehidro width={104} height={71}/>
+           
           </View>
 
           <View style={{marginTop:2, marginBottom:3, width:"100%"}}>
-            <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'nats-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
+            <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'poppins-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
           </View>
             
         </LinearGradient>

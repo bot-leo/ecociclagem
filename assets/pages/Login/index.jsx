@@ -1,22 +1,24 @@
 import React, { useState } from 'react'
 import { StatusBar } from 'expo-status-bar'
-import {  Text, 
-         View, 
-         Alert,
-         SafeAreaView,
-         ScrollView} from 'react-native'
+import {
+  Text,
+  View,
+  Alert,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet
+} from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { LinearGradient } from 'expo-linear-gradient'
 import axios from 'axios'
 
-import {style} from "./style"
+import { style } from "./style"
 
-import Login from '../../components/LoginButton'
+import LoginButton from '../../components/LoginButton'
 import InputMail from '../../components/InputMail'
+import LogoColeta from '../../img/logo-coleta-seletiva.svg'
+import Footer from '../../components/Footer'
 
-import LogoAmbiental from '../../img/logo-meio-ambiente-arvore.svg'
-import LogoFehidro from '../../img/logo-fehidro-background.svg'
-import LogoItapecirica from '../../img/logo-prefeitura-itapecirica.svg'
 
 export default function App() {
 
@@ -46,24 +48,23 @@ export default function App() {
       url: `https://ecociclagem-api.herokuapp.com/login`,
       method: "post",
       data: {
-        email: stateEmail,
+        email: stateEmail.toLowerCase(),
         senha: statePass
       },
     };
 
     axios(configurationObject)
-      .then((response) => { 
-        
+      .then((response) => {
+
         //Login realizado
-        if(response.data?.status === "Login sucessfull"){
-          if(response.data.data.voto === ""){
-            navigation.navigate('Votacao', response.data.data.id)
+        if (response.data?.status === "Login sucessfull") {
+          if (response.data.data.voto === "") {
+            navigation.navigate('Home', response.data.data.id)
             showAlertLogin(response.data.data.name)
-          }else{
-            navigation.navigate('ThanksScreen')
-            showAlertLoginVotou(response.data.data.name, response.data.data.voto)
+          } else {
+            navigation.navigate('TabBottomNavigation')
           }
-        }else{
+        } else {
           alert("Erro Desconhecido")
         }
       })
@@ -77,57 +78,57 @@ export default function App() {
 
   return (
     <SafeAreaView style={style.containerSafe}>
-     <StatusBar style="light" backgroundColor='#000' translucent={false} />
-     <ScrollView style={style.contrainerScrollView} showsVerticalScrollIndicator={false} >
-        <LinearGradient style={style.container} colors={['#42D259', '#759DC8']}>
+      <StatusBar style="light" backgroundColor="#000"/>
+    <LinearGradient style={style.containerGradient} colors={['#019444', '#006A39']}>
 
-          <View style={style.topLogoPlace}>
-            <LogoItapecirica width={175} height={72}/>
-          </View>
+      <View style={style.topLogoPlace}>
+      <LogoColeta width={141} height={68}/>
+      </View>
 
-          <View style={style.containerTitle}>
-            <Text style={style.titlePrincipal}>Olá! Tudo bem?</Text>
-            <Text style={style.subTitle}>
-              Por favor, insira abaixo as suas informações de{'\n'}cadastro no Coleta Seletiva de Itapecerica.
-            </Text>
-          </View>
+      <View style={style.midContent}>
+        <View style={style.title}>
+          <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25, fontFamily: 'poppins-bold' }}>
+            Olá! Tudo bem?
+          </Text>
+          <Text style={{ fontSize: 12, color: '#fff', textAlign: 'center', lineHeight: 15, textAlign: 'center', fontFamily: 'poppins-regular' }}>
+            Por favor, insira abaixo as suas informações de cadastro no Coleta Seletiva de Itapecerica.
+          </Text>
+        </View>
 
-          <View style={style.containerInput}>
-            <InputMail onChange={(value) => setStateEmail(value)} placeholder="Email:" />
+        <View style={style.input}>
+          <InputMail onChange={(value) => setStateEmail(value)} placeholder="E-mail" iconEmail />
 
-            <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha:" passwordInput={true} />
-          </View>
+          <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha" passwordInput={true} iconPass />
+        </View>
 
-          <View style={style.register}>
-            <Login titulo='Realizar Acesso' onPress={() => login()} />
-          </View>
+        <View style={style.register}>
+          <LoginButton titulo='Realizar Acesso' onPress={() => login()} />
+        </View>
 
-          <View style={style.containerSecundaryitle}>
-            <Text style={style.secundaryTitle}>
-              Não possui cadastro?
-            </Text>
-            <Text style={style.secundarySubTitle}>
-              Caso não tenha um cadastro, não se preocupe!
-              {'\n'}
-              Clique no botão para os próximos passos de cadastro.
-            </Text>
-          </View>
+        <View style={{ width: '80%', height: 3, backgroundColor: '#fff', marginBottom: 20 }} />
 
-          <View style={style.register}>
-            <Login titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
-          </View>
 
-          <View style={style.bottomLogoPlace}>
-            <LogoAmbiental width={159} height={74} />
-            <LogoFehidro width={104} height={71}/>
-          </View>
+        <View style={style.bottomTitle}>
+          <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25, fontFamily: 'poppins-bold' }}>
+            Não possui cadastro?
+          </Text>
+          <Text style={{ fontSize: 12, color: '#fff', textAlign: 'justify', lineHeight: 15,fontFamily: 'poppins-regular' }}>
+            Caso não tenha um cadastro, não se preocupe!
+          </Text>
+        </View>
 
-          <View style={{marginTop:2, marginBottom:3, width:"100%"}}>
-              <Text style={{fontSize: 11, lineHeight: 35, color:'#FFF',textAlign:"center", fontFamily:'nats-regular' }}>Desenvolvido por SEMEAR - Projetos Educacionais</Text>
-          </View>
+        <View style={style.register}>
+          <LoginButton titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
+        </View>
+      </View>
 
-        </LinearGradient>
-      </ScrollView>
+      <View style={style.footerPlace}>
+        <Footer />
+      </View>
+
+    </LinearGradient>
     </SafeAreaView>
-  )
+
+  );
 }
+
