@@ -27,6 +27,7 @@ export const style = StyleSheet.create({
     position: 'relative',
     top: 0,
     left: 10,
+    
   },
 
 
