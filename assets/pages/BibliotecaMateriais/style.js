@@ -4,7 +4,12 @@ import { width } from '../../style/globalStyle'
 
  export const style = StyleSheet.create({
   containerSafe:{
-    flex:1
+    flex:1,
+  
+  },
+  containerScroll:{
+    
+    
   },
   containerGradient:{
     flex:1,
@@ -16,7 +21,8 @@ import { width } from '../../style/globalStyle'
     width:'85%',
     flexDirection:"row", 
     justifyContent:"space-around", 
-    alignItems:"center"
+    alignItems:"center",
+    
   },
 
 

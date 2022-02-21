@@ -137,12 +137,14 @@ export default function App() {
                 inputTitle='Senha'
                 onChange={(value) => setStatePass(value)}
                 passwordKeyboard={true}
+                pwdInput
               />
 
               <RegisterInfo
                 inputTitle='Confirme a Senha'
                 onChange={(value) => setStateConfirmPass(value)}
                 passwordKeyboard={true}
+                pwdInput
                 onEnd={() => confirmPassword()}
               />
             </View>

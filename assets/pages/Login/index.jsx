@@ -98,7 +98,7 @@ export default function App() {
         <View style={style.input}>
           <InputMail onChange={(value) => setStateEmail(value)} placeholder="E-mail" iconEmail />
 
-          <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha" passwordInput={true} iconPass />
+          <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha" iconPass pwdInput />
         </View>
 
         <View style={style.register}>

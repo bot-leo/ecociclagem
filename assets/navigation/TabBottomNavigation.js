@@ -3,7 +3,6 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs"
 import {tabBottomScreens} from "./TabBottomScreens"
 import Icon from '@expo/vector-icons/FontAwesome5'
 
-
 import LogoColetaSeletiva from '../img/logo-coleta-seletiva.svg'
 
 const {Navigator, Screen} =createBottomTabNavigator()
@@ -13,10 +12,11 @@ export default function TabBottomNavigation(){
     <Navigator initialRouteName="Home"
 
     screenOptions={({ route }) => ({
-      headerShown: true,
+      headerShown: false,
       headerStyle: {
         backgroundColor: '#006738', 
       },
+      tabBarActiveBackgroundColor:"#006A39",
       tabBarIcon: ({ color, size }) => {
         let iconName;
   
@@ -45,15 +45,18 @@ export default function TabBottomNavigation(){
       },
       
       tabBarStyle:{
-        backgroundColor: '#C4C4C4',                    
+        backgroundColor: '#C4C4C4',  
+
       },
     })}
       tabBarOptions={{
-        activeTintColor: "#019444",
+        activeTintColor: "#fff",
+        
         inactiveTintColor: "#006738",
         showLabel: false,
         
       }}
+
                 >
       {tabBottomScreens.map(({name, component }) =>(
         <Screen
