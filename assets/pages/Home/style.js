@@ -2,11 +2,9 @@ import {StyleSheet} from 'react-native'
 import {width} from '../../style/globalStyle.js'
 
 export const style = StyleSheet.create({
-  containerView:{
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
+  containerConteudo:{
+    flex:1, 
+    height:'100%'
   },
   containerContentMain:{
     width:width, 
@@ -17,7 +15,7 @@ export const style = StyleSheet.create({
     justifyContent:"space-around"
   },
   textInfo:{
-    width: 151,
+    width: '45%',
     fontFamily:'poppins-regular',
     fontSize:14,
     color:'#FFFFFF',
@@ -27,7 +25,6 @@ export const style = StyleSheet.create({
     position: 'relative',
     top: 0,
     left: 10,
-    
   },
 
 

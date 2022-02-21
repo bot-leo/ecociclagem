@@ -1,5 +1,7 @@
 import {StyleSheet, Dimensions} from 'react-native'
+import { StatusBar } from 'expo-status-bar'
 
+import Constants from "expo-constants"
 export const {width, height} = Dimensions.get('window')
 
 export const globalStyle  = StyleSheet.create({
@@ -13,5 +15,20 @@ export const globalStyle  = StyleSheet.create({
     fontSize:48,
     color:"#000",
     fontFamily:'poppins-regular',
-  }
+  },
+
+
+  safeContainer:{
+    flex:1,
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#000',
+    
+  },
+  scrollContainer:{
+    backgroundColor: '#445500',
+    height: '100%',
+  },
 }) 
+
+
+

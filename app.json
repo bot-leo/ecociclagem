@@ -17,8 +17,8 @@
     ],
     "splash": {
       "image": "./details/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#42D259"
+      "resizeMode": "cover",
+      "backgroundColor": "#006A39"
     },
     "packagerOpts": {
       "config": "metro.config.js",
