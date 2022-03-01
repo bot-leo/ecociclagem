@@ -4,7 +4,7 @@ import { style } from './style'
 import LogoColetaSeletiva from '../../img/logo-coleta-seletiva.svg'
 import MenuToggle from '../../img/icone-menu-toggle.svg'
 import IconeAjuda from '../../img/icone-ajuda.svg'
-import IconeSeta from '../../img/icone-seta-direita.svg'
+import IconeSeta from '../../img/icone-seta-esquerda.svg'
 
 
 

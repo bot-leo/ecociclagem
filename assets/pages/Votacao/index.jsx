@@ -11,7 +11,7 @@ import {useNavigation} from "@react-navigation/native"
 import api from '../../utils/api.js'
 
 import {style} from './style.js'
-import TextTitle from "../../components/TextTitle"
+
 import Login from '../../components/LoginButton'
 import ButtonOptionName from '../../components/ButtonOptionName.jsx'
 
@@ -60,7 +60,7 @@ export default function Votacao({route}){
             
 
             <View style={style.containerTextTitle}>
-              <TextTitle title="Faça sua escolha!"/> 
+            
             </View>
             
             <Text style={style.textInfo}>Olá! 

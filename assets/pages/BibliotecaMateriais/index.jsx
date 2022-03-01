@@ -23,14 +23,15 @@ export default function BibliotecaMateriais(){
 
   return (
     <SafeAreaView style={globalStyle.safeContainer}>
-      <ScrollView style={globalStyle.scrollContainer}>
+     <StatusBar style='light' backgroundColor='#000' />
+     <HeaderApp  />
+     <ScrollView style={globalStyle.scrollContainer}>
       
         <LinearGradient
           style={style.containerGradient}
           colors={["#019444", "#006A39"]}
         >
-          <StatusBar style='light' backgroundColor='#000' />
-          <HeaderApp  />
+          
           <Text style={style.titleMain}>BIBLIOTECA DE MATERIAIS</Text>
           <Text style={style.textRegular}>
             Aperte em um dos botões para abrir os detalhes e obter mais
@@ -92,8 +93,8 @@ export default function BibliotecaMateriais(){
           </View>
 
         </LinearGradient>
-      </ScrollView>
-      </SafeAreaView>
+     </ScrollView>
+  </SafeAreaView>
   )
 }
 
