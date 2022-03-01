@@ -20,7 +20,7 @@ import LogoColeta from '../../img/logo-coleta-seletiva.svg'
 import Footer from '../../components/Footer'
 
 
-export default function App() {
+export default function Login() {
 
   const navigation = useNavigation()
 
@@ -58,12 +58,7 @@ export default function App() {
 
         //Login realizado
         if (response.data?.status === "Login sucessfull") {
-          if (response.data.data.voto === "") {
-            navigation.navigate('Home', response.data.data.id)
-            showAlertLogin(response.data.data.name)
-          } else {
             navigation.navigate('TabBottomNavigation')
-          }
         } else {
           alert("Erro Desconhecido")
         }

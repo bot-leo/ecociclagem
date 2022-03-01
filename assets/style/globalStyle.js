@@ -5,16 +5,10 @@ import Constants from "expo-constants"
 export const {width, height} = Dimensions.get('window')
 
 export const globalStyle  = StyleSheet.create({
-  containerScreen: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textTitle:{
-    fontSize:48,
-    color:"#000",
-    fontFamily:'poppins-regular',
+  titleRegular:{
+    fontFamily:'poppins-bold',
+    fontSize:16,
+    color:"#EEEEEE",
   },
 
 
@@ -22,11 +16,12 @@ export const globalStyle  = StyleSheet.create({
     flex:1,
     paddingTop: Constants.statusBarHeight,
     backgroundColor: '#000',
+    height:'100%',
     
   },
   scrollContainer:{
-    backgroundColor: '#445500',
-    height: '100%',
+    backgroundColor: 'red',
+    height:'100%',
   },
 }) 
 
