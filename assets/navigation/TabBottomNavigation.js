@@ -9,7 +9,7 @@ const {Navigator, Screen} =createBottomTabNavigator()
 
 export default function TabBottomNavigation(){
   return(
-    <Navigator initialRouteName="Home"
+    <Navigator 
 
     screenOptions={({ route }) => ({
       headerShown: false,

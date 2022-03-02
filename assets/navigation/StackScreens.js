@@ -1,6 +1,7 @@
 import {Login,
         Cadastro,
         TabBottomNavigation,
+        DrawerNavigation
         } from "../pages"
 
 const  stackScreens = [
@@ -10,8 +11,8 @@ const  stackScreens = [
     
   },
   {
-    name:"TabBottomNavigation",
-    component:TabBottomNavigation,
+    name:"DrawerNavigation",
+    component:DrawerNavigation,
   },
   {
     name:"Cadastro",

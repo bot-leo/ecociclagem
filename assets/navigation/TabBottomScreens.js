@@ -1,7 +1,8 @@
 import{Home,
       Status,
       SearchMap,
-      BibliotecaMateriais} from "../pages"
+      BibliotecaMateriais,
+    DrawerNavigation} from "../pages"
 
 
 import StackNavigationApp from '../navigation/StackNavigationApp'                                

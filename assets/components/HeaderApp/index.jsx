@@ -5,10 +5,11 @@ import LogoColetaSeletiva from '../../img/logo-coleta-seletiva.svg'
 import MenuToggle from '../../img/icone-menu-toggle.svg'
 import IconeAjuda from '../../img/icone-ajuda.svg'
 import IconeSeta from '../../img/icone-seta-esquerda.svg'
-
+import { useNavigation } from '@react-navigation/core'
 
 
 export function HeaderApp({goBack, onPressAjuda,onPressToggle}){
+  const navigation = useNavigation()
 
   const ButtonAjuda = ({onPressAjuda}) =>{
     return(
@@ -38,7 +39,7 @@ export function HeaderApp({goBack, onPressAjuda,onPressToggle}){
     <View style={style.containerHeader}>
       {goBack ? (
         <View style={{ marginLeft: 24 }}>
-          <ButtonBack />
+          <ButtonBack onPressBack={()=> navigation.goBack()}/>
         </View>
       ) : (
         <></>
@@ -58,7 +59,7 @@ export function HeaderApp({goBack, onPressAjuda,onPressToggle}){
         }}
       >
         <ButtonAjuda onPressAjuda={onPressAjuda} />
-        <ButtonToggle onPressToggle={onPressToggle} />
+        <ButtonToggle onPressToggle={() => navigation.openDrawer()} />
       </View>
     </View>
   );
