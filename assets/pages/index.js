@@ -9,6 +9,7 @@ import BibliotecaMateriais from "../pages/BibliotecaMateriais"
 import TabBottomNavigation from "../navigation/TabBottomNavigation"
 import Votacao from "../pages/Votacao"
 import ThanksScreen from "../pages/ThanksScreen"
+import Usuario from "../pages/Usuario"
 
 
 
@@ -23,5 +24,6 @@ export{
   BibliotecaMateriais,
   TabBottomNavigation,
   Votacao,
-  ThanksScreen
+  ThanksScreen,
+  Usuario,
 }

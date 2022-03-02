@@ -1,7 +1,8 @@
 import{Home,
       Status,
       SearchMap,
-      BibliotecaMateriais} from "../pages"
+      BibliotecaMateriais,
+      Usuario} from "../pages"
 
 
 import StackNavigationApp from '../navigation/StackNavigationApp'                                
@@ -25,8 +26,8 @@ const  tabBottomScreens = [
   },
   {
     name:"Usuario",
-    component:Status
-  },
+    component:Usuario
+  }
 ]
 
 export {tabBottomScreens}
