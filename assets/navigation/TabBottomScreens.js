@@ -2,7 +2,7 @@ import{Home,
       Status,
       SearchMap,
       BibliotecaMateriais,
-    DrawerNavigation} from "../pages"
+     DrawerNavigation} from "../pages"
 
 
 import StackNavigationApp from '../navigation/StackNavigationApp'                                
