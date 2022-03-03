@@ -102,7 +102,7 @@ export default function Usuario() {
                                     onChange={(value) => setStateCep(value)}
                                     inputType='decimal-pad' />
                             </View>
-                            <View style={{ width: '70%', marginBottom: 5 }}>
+                            <View style={{ width: '50%', marginBottom: 5 }}>
                                 <DefButtom
                                     titulo='Salvar alterações'
                                 />

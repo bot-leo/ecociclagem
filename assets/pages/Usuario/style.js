@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { height } from '../../style/globalStyle'
 
 
 export const style = StyleSheet.create({
@@ -8,7 +9,7 @@ export const style = StyleSheet.create({
     alignItems: "center",
     paddingTop: 5,
     justifyContent:'space-between',
-    height:'100%'
+    height:height
   },
 
   topContent: {

@@ -26,7 +26,7 @@ export default function Componente(props) {
     input: {
       color: '#414143',
       paddingLeft:15,
-      textAlign:'center',
+      textAlign:'left',
       fontFamily:'poppins-regular',
       fontSize:11,
       width: props.pwdInput ? '80%' : '100%',
