@@ -10,6 +10,7 @@ import TabBottomNavigation from "../navigation/TabBottomNavigation"
 import DrawerNavigation from "./../navigation/DrawerNavigation"
 import Sobre from "../pages/Sobre"
 import ThanksScreen from "../pages/ThanksScreen"
+import Usuario from "../pages/Usuario"
 
 
 
@@ -26,5 +27,6 @@ export{
   TabBottomNavigation,
   Sobre,
   ThanksScreen,
-  DrawerNavigation
+  DrawerNavigation,
+  Usuario
 }
