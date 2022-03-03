@@ -1,20 +1,12 @@
  import {StyleSheet} from 'react-native'
-import { width } from '../../style/globalStyle'
+import { height, width } from '../../style/globalStyle'
 
 
  export const style = StyleSheet.create({
-  containerSafe:{
-    flex:1,
-  
-  },
-  containerScroll:{
-    
-    
-  },
   containerGradient:{
     flex:1,
     width: width,
-    
+    height:'100%',
     alignItems:"center"
   },
   containerMain:{
@@ -60,6 +52,7 @@ import { width } from '../../style/globalStyle'
   },
 
   containerListAccordions:{
+    flex:1,
     width:'85%', 
     justifyContent:"space-around",
     alignItems:"center", 

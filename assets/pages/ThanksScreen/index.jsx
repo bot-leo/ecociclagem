@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar'
 
 import {style} from './style.js'
 
-import TextTitle from "../../components/TextTitle"
+
 
 
 1
@@ -17,13 +17,12 @@ export default function ThanksScreen(){
       <StatusBar style="light" backgroundColor='#000' translucent={false} />
       <ScrollView style={style.contrainerScrollView} showsVerticalScrollIndicator={false} >
         <LinearGradient colors={['#42D259', '#28496D']}
-        style={style.background}
-          >
+        style={style.background}>
             
            
 
             <View style={style.containerTextTitle}>
-              <TextTitle title="Muito Obrigado!"/> 
+              
             </View>
             
             <Text style={style.textInfo}>Depois de escolher o nome para o nosso mascote, está na hora de aguardar até o momento da oficialização do nome.{'\n'}
