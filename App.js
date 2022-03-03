@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font'
 
 import Navigation from "./assets/navigation"
 
-export default function App() {
+export default function App(){
 
   const [fontsLoaded] = useFonts({
     'poppins-bold': require('./assets/fonts/Poppins-Bold.ttf'),
