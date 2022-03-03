@@ -2,8 +2,9 @@ import{Home,
       Status,
       SearchMap,
       BibliotecaMateriais,
-      Usuario} from "../pages"
+      } from "../pages"
 
+import Usuario from '../pages/Usuario'
 
 import StackNavigationApp from '../navigation/StackNavigationApp'                                
 

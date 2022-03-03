@@ -6,20 +6,21 @@ export const style = StyleSheet.create({
   containerGradient: {
     flex: 1,
     alignItems: "center",
-    paddingTop: 20,
-    justifyContent:'space-between'
+    paddingTop: 5,
+    justifyContent:'space-between',
+    height:'100%'
   },
 
   topContent: {
     width: '100%',
     alignItems: 'center',
-    marginBottom: 15
+    marginBottom: 5
   },
 
   midContent: {
     width: '90%',
     alignItems: 'center',
-    marginBottom: 15
+    marginBottom: 5
   },
 
   botContent: {
@@ -33,7 +34,7 @@ export const style = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent:'center',
-    marginBottom: 15
+    marginBottom: 5
   },
 
   buttomStyle:{
