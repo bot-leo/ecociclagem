@@ -14,7 +14,6 @@ export const globalStyle  = StyleSheet.create({
 
   safeContainer:{
     flex:1,
-    paddingTop: Constants.statusBarHeight,
     backgroundColor: '#000',
     height:'100%',
     

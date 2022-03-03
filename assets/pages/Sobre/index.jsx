@@ -20,9 +20,7 @@ export default function Sobre(){
   
   return (
     <SafeAreaView style={style.containerSafeView} >
-      
-      <ScrollView style={style.contrainerScrollView} showsVerticalScrollIndicator={false} >
-        
+    
       <StatusBar style="light" backgroundColor='#000' translucent={false} />
       <HeaderApp goBack/>
         <LinearGradient colors={['#019444', '#006C39',]}
@@ -39,9 +37,14 @@ export default function Sobre(){
               <LogoSecretaria width={140} height={70}/>
               <LogoFehidro width={70} height={95}/>
             </View>
+
+
+            <View>
+              <Text>Desenvolvido por: 
+Semear - Projetos Educacionais</Text>
+            </View>
             
         </LinearGradient>
-      </ScrollView>
     </SafeAreaView>
   )
 }

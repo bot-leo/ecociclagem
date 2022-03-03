@@ -1,7 +1,8 @@
 import React,{useState, useRef, useEffect } from 'react'
 import MapView from 'react-native-maps'
-import { View, Text, TouchableOpacity, SafeAreaView} from 'react-native'
+import { View, Text, TouchableOpacity} from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 import api from '../../utils/api'
 

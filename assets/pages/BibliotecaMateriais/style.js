@@ -6,7 +6,7 @@ import { height, width } from '../../style/globalStyle'
   containerGradient:{
     flex:1,
     width: width,
-    height:'100%',
+    height:'auto',
     alignItems:"center"
   },
   containerMain:{
