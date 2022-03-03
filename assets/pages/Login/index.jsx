@@ -73,55 +73,55 @@ export default function Login() {
 
   return (
     <SafeAreaView style={style.containerSafe}>
-      <StatusBar style="light" backgroundColor="#000"/>
-    <LinearGradient style={style.containerGradient} colors={['#019444', '#006A39']}>
+      <StatusBar style="light" backgroundColor="#000" />
+      <LinearGradient style={style.containerGradient} colors={['#019444', '#006A39']}>
 
-      <View style={style.topLogoPlace}>
-      <LogoColeta width={141} height={68}/>
-      </View>
-
-      <View style={style.midContent}>
-        <View style={style.title}>
-          <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25, fontFamily: 'poppins-bold' }}>
-            Olá! Tudo bem?
-          </Text>
-          <Text style={{ fontSize: 12, color: '#fff', textAlign: 'center', lineHeight: 15, textAlign: 'center', fontFamily: 'poppins-regular' }}>
-            Por favor, insira abaixo as suas informações de cadastro no Coleta Seletiva de Itapecerica.
-          </Text>
+        <View style={style.topLogoPlace}>
+          <LogoColeta width={141} height={68} />
         </View>
 
-        <View style={style.input}>
-          <InputMail onChange={(value) => setStateEmail(value)} placeholder="E-mail" iconEmail />
+        <View style={style.midContent}>
+          <View style={style.title}>
+            <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25, fontFamily: 'poppins-bold' }}>
+              Olá! Tudo bem?
+            </Text>
+            <Text style={{ fontSize: 12, color: '#fff', textAlign: 'center', lineHeight: 15, textAlign: 'center', fontFamily: 'poppins-regular' }}>
+              Por favor, insira abaixo as suas informações de cadastro no Coleta Seletiva de Itapecerica.
+            </Text>
+          </View>
 
-          <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha" iconPass pwdInput />
+          <View style={style.input}>
+            <InputMail onChange={(value) => setStateEmail(value)} placeholder="E-mail" iconEmail />
+
+            <InputMail onChange={(value) => setStatePass(value)} placeholder="Senha" iconPass pwdInput />
+          </View>
+
+          <View style={style.register}>
+            <LoginButton titulo='Realizar Acesso' onPress={() => login()} />
+          </View>
+
+          <View style={{ width: '80%', height: 3, backgroundColor: '#fff', marginBottom: 20 }} />
+
+
+          <View style={style.bottomTitle}>
+            <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25, fontFamily: 'poppins-bold' }}>
+              Não possui cadastro?
+            </Text>
+            <Text style={{ fontSize: 12, color: '#fff', textAlign: 'justify', lineHeight: 15, fontFamily: 'poppins-regular' }}>
+              Caso não tenha um cadastro, não se preocupe!
+            </Text>
+          </View>
+
+          <View style={style.register}>
+            <LoginButton titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
+          </View>
         </View>
 
-        <View style={style.register}>
-          <LoginButton titulo='Realizar Acesso' onPress={() => login()} />
+        <View style={style.footerPlace}>
+          <Footer />
         </View>
 
-        <View style={{ width: '80%', height: 3, backgroundColor: '#fff', marginBottom: 20 }} />
-
-
-        <View style={style.bottomTitle}>
-          <Text style={{ fontSize: 17, color: '#fff', lineHeight: 25, fontFamily: 'poppins-bold' }}>
-            Não possui cadastro?
-          </Text>
-          <Text style={{ fontSize: 12, color: '#fff', textAlign: 'justify', lineHeight: 15,fontFamily: 'poppins-regular' }}>
-            Caso não tenha um cadastro, não se preocupe!
-          </Text>
-        </View>
-
-        <View style={style.register}>
-          <LoginButton titulo='Criar Cadastro' onPress={() => navigation.navigate('Cadastro')} />
-        </View>
-      </View>
-
-      <View style={style.footerPlace}>
-        <Footer />
-      </View>
-
-    </LinearGradient>
+      </LinearGradient>
     </SafeAreaView>
 
   );
