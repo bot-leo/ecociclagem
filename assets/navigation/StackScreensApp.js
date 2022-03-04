@@ -1,23 +1,14 @@
 import {
-  EnvironmentalProjectScreen,
   Home,
-  MyRecycleBins
+  ColetaSeletivaVideos
 } from "../pages"
 
 
 const  stackScreensApp = [
-{
-name:"EnvironmentalProjectScreen",
-component:EnvironmentalProjectScreen,
-},
-{
-name:"Home",
-component:Home,
-},
-{
-name:"MyRecycleBins",
-component:MyRecycleBins,
-},
+  {
+    name:"ColetaSeletivaVideos",
+    component:ColetaSeletivaVideos,
+  },
 
 ]
 

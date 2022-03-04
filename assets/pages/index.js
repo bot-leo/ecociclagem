@@ -2,15 +2,13 @@ import Login from "../pages/Login"
 import Cadastro from "../pages/Cadastro"
 import Home from "../pages/Home"
 import Status from "../pages/Status"
-import SearchMap from "../pages/SearchMap"
-import EnvironmentalProjectScreen from "../pages/EnvironmentalProjectScreen"
-import MyRecycleBins from "../pages/MyRecycleBins"
+import PontosColetaMapa from "../pages/PontosColetaMapa"
 import BibliotecaMateriais from "../pages/BibliotecaMateriais"
-import TabBottomNavigation from "../navigation/TabBottomNavigation"
-import Votacao from "../pages/Votacao"
-import ThanksScreen from "../pages/ThanksScreen"
+import Sobre from "../pages/Sobre"
 import Usuario from "../pages/Usuario"
-
+import ColetaSeletivaVideos from '../pages/ColetaSeletivaVideos'
+import ColetaPortaPorta from '../pages/ColetaPortaPorta'
+import ColetaPortaPortaDois from '../pages/ColetaPortaPortaDois'
 
 
 export{
@@ -18,12 +16,11 @@ export{
   Cadastro,
   Home,
   Status,
-  SearchMap,
-  EnvironmentalProjectScreen,
-  MyRecycleBins,
+  PontosColetaMapa,
   BibliotecaMateriais,
-  TabBottomNavigation,
-  Votacao,
-  ThanksScreen,
+  Sobre,
   Usuario,
+  ColetaSeletivaVideos,
+  ColetaPortaPorta,
+  ColetaPortaPortaDois
 }

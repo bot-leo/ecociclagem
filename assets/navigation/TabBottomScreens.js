@@ -1,17 +1,17 @@
-import{Home,
-      Status,
-      SearchMap,
+import{Status,
+      PontosColetaMapa,
       BibliotecaMateriais,
-      } from "../pages"
+      Usuario,
+      Home
+} from "../pages"
 
-import Usuario from '../pages/Usuario'
 
 import StackNavigationApp from '../navigation/StackNavigationApp'                                
 
 const  tabBottomScreens = [
   {
     name:"Home",
-    component:StackNavigationApp
+    component:Home
   },
   {
     name:"BibliotecaMateriais",
@@ -22,8 +22,8 @@ const  tabBottomScreens = [
     component:Status
   },
   {
-    name:"SearchMap",
-    component:SearchMap
+    name:"PontosColetaMapa",
+    component:PontosColetaMapa
   },
   {
     name:"Usuario",

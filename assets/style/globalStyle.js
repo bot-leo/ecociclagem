@@ -1,8 +1,16 @@
 import {StyleSheet, Dimensions} from 'react-native'
-import { StatusBar } from 'expo-status-bar'
 
-import Constants from "expo-constants"
+export const gradientColor = ['#019444', '#006C39']
 export const {width, height} = Dimensions.get('window')
+
+export const Font12 = 12
+export const Font11 = 11
+export const Font16 = 16
+
+export const FontBold = 'poppins-bold'
+export const FontRegular = 'poppins-regular'
+
+export const ColorWhite = '#FFFFFF'
 
 export const globalStyle  = StyleSheet.create({
   titleRegular:{
@@ -14,15 +22,25 @@ export const globalStyle  = StyleSheet.create({
 
   safeContainer:{
     flex:1,
-    paddingTop: Constants.statusBarHeight,
+    width: width,
     backgroundColor: '#000',
     height:'100%',
     
   },
   scrollContainer:{
+    width: width,
     backgroundColor: 'red',
     height:'100%',
   },
+  gradientContainer:{
+    flex:1,
+    width: width,
+    height:'100%',
+    alignItems: 'center',
+    
+  },
+
+  
 }) 
 
 

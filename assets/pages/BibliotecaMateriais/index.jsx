@@ -2,9 +2,10 @@ import React from 'react'
 import { Text,
          ScrollView, 
          View, 
-         SafeAreaView} from 'react-native'
+         } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { StatusBar } from 'expo-status-bar'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 import {style} from './style.js'
 import { DoubtButton } from '../../components/DoubtButton/index.jsx'
