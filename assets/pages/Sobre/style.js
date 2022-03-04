@@ -1,50 +1,44 @@
 
 import {StyleSheet} from "react-native"
-import { height, width } from "../../style/globalStyle"
+import { ColorWhite, Font12, FontBold, FontRegular, height, Text11, width } from "../../style/globalStyle"
 
 export const style = StyleSheet.create({
-  containerSafeView:{
-    flex:1
-  },
-  contrainerScrollView:{
-    flex:1, 
-    width: width, 
-    height: height
-  },
-  background:{
-    flex: 1,
-    width: width,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop:20
-  },
-  containerTextTitle:{
-    marginTop:15
-  },
-  textInfo:{
-    fontSize: 16,
-    lineHeight: 35, 
-    color:'#FFF', 
-    marginTop:15,
-    fontFamily:"poppins-regular"
-  },
-  containerButtonsName:{
-    width:width, 
-    height:250, 
-    justifyContent:'space-around', 
-    alignItems:"center"
+  containerTextosInicial:{
+    justifyContent:"center", 
+    alignItems:"center", 
+    marginTop:14, 
+    marginBottom:35
   },
   containerLogos:{
-    width:'90%',
-    flexDirection:'row', 
+    flexDirection:"row", 
+    justifyContent:"space-between",
+    alignItems:"flex-end", 
+    width:"85%", 
+    marginTop:35,
+    
+  },
+  containerTextosFooter:{
+    width:'100%', 
     justifyContent:"space-between", 
     alignItems:"center", 
-    marginBottom:20, 
-    marginTop:39
+    marginTop:35
+  },
+  
+  textInitialViewSobre:{
+    fontFamily:FontRegular,
+    color: ColorWhite,
+    fontSize:Font12,
+    marginTop:Font12,
+  },
+  textViewSobre:{
+    fontFamily:FontRegular,
+    color: ColorWhite,
+    fontSize:14,
+    textAlign:"center"
+  },
+  textViewSobreBold:{
+    fontFamily:FontBold,
+    color: ColorWhite,
   }
 
-
-
-
-  
 })

@@ -11,6 +11,7 @@ import { globalStyle } from '../../style/globalStyle.js'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import PerfilIMG from '../../img/icone-mascote-perfil.svg'
+import { HeaderApp } from '../../components/HeaderApp'
 
 
 export default function Usuario() {
@@ -44,6 +45,7 @@ export default function Usuario() {
 
             <ScrollView style={globalStyle.scrollContainer}>
                 <StatusBar style="light" backgroundColor="#000" />
+                <HeaderApp/>
 
                 <LinearGradient style={style.containerGradient} colors={['#019444', '#006A39']}>
 

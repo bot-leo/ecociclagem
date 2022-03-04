@@ -2,7 +2,7 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { screenOptions, universalScreenOptions } from './options'
 
-import { stackScreensApp } from '../navigation/StackScreensApp'
+import { stackScreensApp } from './StackScreensApp'
 
 
 const { Navigator, Screen } = createNativeStackNavigator()

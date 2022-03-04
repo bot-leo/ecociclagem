@@ -15,7 +15,7 @@ import { StatusBar } from 'expo-status-bar'
 import { style } from './style'
 
 
-export default function App() {
+export default function Cadastro() {
   const navigation = useNavigation()
 
   const showToast = (text) => {

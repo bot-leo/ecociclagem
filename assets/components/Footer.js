@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, } from 'react-native'
-import Logo1 from '../img/brasao-e-Logo.svg'
-import Logo2 from '../img/logo-prefeitura-itapecerica.svg'
+import Logo1 from '../img/logo-prefeitura-itapecerica22.svg'
+import Logo2 from '../img/logo-secretaria-meio-ambiente-22.svg'
 import Logo3 from '../img/logo-fehidro-background.svg'
 
 

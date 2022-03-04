@@ -38,7 +38,7 @@ export default function Home(){
         </View>
         <View style={style.containerBottomView}>
             <DoubtButton titleButton={'COLETA SELETIVA'} iconButton={<IconReciclagem width={35} height={35}/>} onPress={() => navigation.navigate('Status','TabBottomNavigation')}/>
-            <DoubtButton titleButton={'ENCONTRE O PEV MAIS PRÓXIMO DE VOCÊ'} iconButton={<IconPontoColeta width={35} height={35}/>} onPress={() => navigation.navigate('SearchMap','TabBottomNavigation')}/>
+            <DoubtButton titleButton={'ENCONTRE O PEV MAIS PRÓXIMO DE VOCÊ'} iconButton={<IconPontoColeta width={35} height={35}/>} onPress={() => navigation.navigate('PontosColetaMapa','TabBottomNavigation')}/>
             <DoubtButton titleButton={'REGISTRE-SE NO PROGRAMA DE COLETA PORTA A PORTA'} iconButton={<IconColetaHome width={35} height={35}/>} onPress={() => navigation.navigate('Status','TabBottomNavigation')}/>
         </View>
        </View>

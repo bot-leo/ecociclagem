@@ -24,7 +24,7 @@ export default function TabBottomNavigation(){
           case 'Home':
             iconName = 'home'
             break
-          case 'SearchMap':
+          case 'PontosColetaMapa':
             iconName = 'map-marked-alt'
             break
           case 'Usuario':
