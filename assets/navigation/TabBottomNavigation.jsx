@@ -29,7 +29,7 @@ export default function TabBottomNavigation(){
           case 'Usuario':
             iconName = 'user'
             break
-          case 'Status':
+          case 'ColetaSeletivaVideos':
             iconName = 'recycle'
             break
           case 'BibliotecaMateriais':

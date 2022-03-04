@@ -11,7 +11,7 @@ function StackNavigationApp() {
   return (
     <>
       <Navigator
-        initialRouteName="Home"
+      
         screenOptions={screenOptions}
       >
         {stackScreensApp.map(({ name, component }) => (

@@ -22,21 +22,14 @@ export const globalStyle  = StyleSheet.create({
 
   safeContainer:{
     flex:1,
-    width: width,
-    backgroundColor: '#000',
-    height:'100%',
-    
+    alignItems:"center",
   },
   scrollContainer:{
-    width: width,
-    backgroundColor: 'red',
-    height:'100%',
+    flex:1,
+    
   },
   gradientContainer:{
     flex:1,
-    width: width,
-    height:'100%',
-    alignItems: 'center',
     
   },
 

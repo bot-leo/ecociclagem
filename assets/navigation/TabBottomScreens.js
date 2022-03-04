@@ -1,7 +1,7 @@
 import{Status,
       PontosColetaMapa,
       BibliotecaMateriais,
-      Usuario} from "../pages"
+      Usuario, ColetaSeletivaVideos} from "../pages"
 
 import DrawerNavigation from '../navigation/DrawerNavigation'
                             
@@ -15,8 +15,8 @@ const  tabBottomScreens = [
     component:BibliotecaMateriais
   },
   {
-    name:"Status",
-    component:Status
+    name:"ColetaSeletivaVideos",
+    component:ColetaSeletivaVideos
   },
   {
     name:"PontosColetaMapa",

@@ -1,7 +1,8 @@
 import{Home,
   Status,
   BibliotecaMateriais,
-  Sobre
+  Sobre,
+  ColetaSeletivaVideos
 } from "./../pages"
 
 const drawerScreens =[
@@ -17,7 +18,7 @@ const drawerScreens =[
   },
   {
     name: 'Coleta Seletiva',
-    component: Status,
+    component: ColetaSeletivaVideos,
     
   },
   {

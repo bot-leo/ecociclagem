@@ -28,10 +28,10 @@ export default function BibliotecaMateriais(){
      <HeaderApp  />
      <ScrollView style={globalStyle.scrollContainer}>
       
-        <LinearGradient
-          style={style.containerGradient}
-          colors={["#019444", "#006A39"]}
-        >
+      <LinearGradient
+        style={style.containerGradient}
+        colors={["#019444", "#006A39"]}
+      >
           
           <Text style={style.titleMain}>BIBLIOTECA DE MATERIAIS</Text>
           <Text style={style.textRegular}>
@@ -85,10 +85,10 @@ export default function BibliotecaMateriais(){
               <ListMaterias nomeList={'MATERIAIS RECICLÁVEIS'}/>
             </View>
             <View style={{marginBottom:15}}>
-            <ListMaterias nomeList={'MATERIAIS NÃO RECICLÁVEIS'}/>
+              <ListMaterias nomeList={'MATERIAIS NÃO RECICLÁVEIS'}/>
             </View>
             <View style={{marginBottom:15}}>
-            <ListMaterias nomeList={'MATERIAIS ESPECIAIS'}/>
+              <ListMaterias nomeList={'MATERIAIS ESPECIAIS'}/>
             </View>
             
           </View>
