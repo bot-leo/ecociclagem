@@ -1,17 +1,14 @@
 import{Status,
       PontosColetaMapa,
       BibliotecaMateriais,
-      Usuario,
-      Home
-} from "../pages"
+      Usuario} from "../pages"
 
-
-import StackNavigationApp from '../navigation/StackNavigationApp'                                
-
+import DrawerNavigation from '../navigation/DrawerNavigation'
+                            
 const  tabBottomScreens = [
   {
-    name:"Home",
-    component:Home
+    name:"DrawerNavigation",
+    component:DrawerNavigation
   },
   {
     name:"BibliotecaMateriais",

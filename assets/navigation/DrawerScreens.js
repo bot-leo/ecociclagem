@@ -4,12 +4,10 @@ import{Home,
   Sobre
 } from "./../pages"
 
-import TabBottomNavigation from '../navigation/TabBottomNavigation'
-
 const drawerScreens =[
   {
     name: 'Home',
-    component: TabBottomNavigation,
+    component: Home,
    
   },
   {
@@ -45,7 +43,6 @@ const drawerScreens =[
   {
     name: 'Sair',
     component: Status,
-    
   },
   
 ]

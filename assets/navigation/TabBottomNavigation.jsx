@@ -10,18 +10,17 @@ const {Navigator, Screen} =createBottomTabNavigator()
 export default function TabBottomNavigation(){
   return(
     <Navigator 
-
-    screenOptions={({ route }) => ({
+     screenOptions={({ route }) => ({
       headerShown: false,
       headerStyle: {
         backgroundColor: '#006738', 
       },
       tabBarActiveBackgroundColor:"#006A39",
       tabBarIcon: ({ color, size }) => {
-        let iconName;
+        let iconName
   
         switch (route.name) {
-          case 'Home':
+          case 'DrawerNavigation':
             iconName = 'home'
             break
           case 'PontosColetaMapa':
@@ -41,21 +40,18 @@ export default function TabBottomNavigation(){
             break
         }
   
-        return <Icon name={iconName} size={size} color={color} />;
+        return <Icon name={iconName} size={size} color={color} />
       },
       
       tabBarStyle:{
         backgroundColor: '#C4C4C4',  
 
       },
+      tabBarInactiveTintColor:"#006738",
+      tabBarActiveTintColor: "#fff",
+      tabBarShowLabel:false
     })}
-      tabBarOptions={{
-        activeTintColor: "#fff",
-        
-        inactiveTintColor: "#006738",
-        showLabel: false,
-        
-      }}
+    
 
                 >
       {tabBottomScreens.map(({name, component }) =>(

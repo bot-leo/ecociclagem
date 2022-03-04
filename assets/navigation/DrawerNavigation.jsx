@@ -1,15 +1,13 @@
 import React from 'react'
 import {
   createDrawerNavigator,
-  DrawerContentOptions
 } from '@react-navigation/drawer'
 
 import { drawerScreens} from './DrawerScreens'
 
 const { Navigator, Screen } = createDrawerNavigator()
 
-
-function HomeDrawer() {
+function DrawerNavigation(props) {
   
   return (
     <Navigator
@@ -28,4 +26,4 @@ function HomeDrawer() {
   )
 }
 
-export default HomeDrawer
+export default DrawerNavigation

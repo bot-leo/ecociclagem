@@ -58,7 +58,7 @@ export default function Login() {
 
         //Login realizado
         if (response.data?.status === "Login sucessfull") {
-            navigation.navigate('DrawerNavigation')
+            navigation.navigate('TabBottomNavigation')
         } else {
           alert("Erro Desconhecido")
         }
